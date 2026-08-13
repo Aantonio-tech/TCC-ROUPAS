@@ -6,16 +6,44 @@
   <title>Soul Street | Home</title>
   <meta name="description" content="Home simples da Soul Street com acesso para login, produtos, colaboradores e contatos." />
 
+  <!-- Links do Google Fonts corrigidos -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://googleapis.com" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+  
+  <!-- Estilos extras para o Botão Ver Mais e Alinhamento -->
+  <style>
+    .load-more-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        width: 100%;
+    }
+    #btn-load-more {
+        cursor: pointer;
+        background-color: transparent;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    /* Garante que os cards dinâmicos fiquem alinhados verticalmente */
+    .dashboard-products .panel {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+    .dashboard-products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="container nav">
-      <a href="#" class="brand">
+      <a href="index.html" class="brand">
         <div class="brand-mark"></div>
         <div class="brand-text">
           <strong>SOUL STREET</strong>
@@ -25,16 +53,17 @@
 
       <nav>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#produtos">Produtos</a></li>
-          <li><a href="#colaboradores">Colaboradores</a></li>
-          <li><a href="#contato">Contato</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="produtos.html" target="_blank">Produtos</a></li>
+          <li><a href="colaboradores.html" target="_blank">Colaboradores</a></li>
+          <li><a href="contato.html" target="_blank">Contato</a></li>
         </ul>
       </nav>
-    </div>
+    </div> <!-- Fechamento da div .container nav corrigido -->
   </header>
 
   <main class="container">
+    <!-- Seção Principal (Hero) -->
     <section class="hero" id="home">
       <div class="hero-grid">
         <div class="hero-copy">
@@ -47,23 +76,20 @@
           </p>
 
           <div class="hero-actions">
-            <a href="#produtos" class="btn btn-primary">Ver Produtos</a>
-            <a href="#contato" class="btn btn-secondary">Fale Conosco</a>
+            <a href="produtos.html" target="_blank" class="btn btn-primary">Ver Produtos</a>
+            <a href="contato.html" target="_blank" class="btn btn-secondary">Fale Conosco</a>
           </div>
 
           <div class="hero-stats">
             <div>
-              <strong>20+</strong>
-              <span>Produtos exclusivos</span>
+              <strong>3</strong>
+              <span>Categorias exclusivas</span>
             </div>
             <div>
-              <strong>10+</strong>
+              <strong>6</strong>
               <span>Colaboradores</span>
             </div>
-            <div>
-              <strong>100%</strong>
-              <span>Projeto escolar</span>
-            </div>
+            <div></div>
           </div>
         </div>
 
@@ -102,7 +128,27 @@
       </div>
     </section>
 
+    <!-- Seção de Produtos com Carregamento Dinâmico -->
     <section class="modules" id="produtos">
+      <div class="section-head">
+        <h2>Destaques da Coleção</h2>
+        <p>
+          Explore as peças exclusivas da nossa linha Urban Culture. Clique em "Ver Mais" 
+          para descobrir novos itens do nosso drop.
+        </p>
+      </div>
+
+      <!-- Container onde o JavaScript injetará os produtos -->
+      <div class="dashboard-products" id="product-container"></div>
+
+      <!-- Container do Botão Ver Mais -->
+      <div class="load-more-container">
+        <button id="btn-load-more" class="btn btn-secondary">Ver Mais</button>
+      </div>
+    </section>
+
+    <!-- Seção dos Painéis de Atalho Originais -->
+    <section class="modules" id="secoes">
       <div class="section-head">
         <h2>Seções do Projeto</h2>
         <p>
@@ -113,23 +159,30 @@
       </div>
 
       <div class="dashboard">
-        <article class="panel">
-          <h3>Produtos</h3>
-          <p>Veja os itens da coleção Soul Street com estilo urbano e visual moderno.</p>
-        </article>
+        <a href="produtos.html" target="_blank">
+          <article class="panel">
+            <h3>Produtos</h3>
+            <p>Veja os itens da coleção Soul Street com estilo urbano e visual moderno.</p>
+          </article>
+        </a>
 
-        <article class="panel">
-          <h3>Colaboradores</h3>
-          <p>Conheça as pessoas que ajudam a construir o projeto e a identidade da marca.</p>
-        </article>
+        <a href="colaboradores.html" target="_blank">
+          <article class="panel">
+            <h3>Colaboradores</h3>
+            <p>Conheça as pessoas que ajudam a construir o projeto e a identidade da marca.</p>
+          </article>
+        </a>
 
-        <article class="panel">
-          <h3>Login</h3>
-          <p>Área reservada para acesso de usuários, administradores ou responsáveis.</p>
-        </article>
+        <a href="#" onclick="alert('Área de login em desenvolvimento!'); return false;">
+          <article class="panel">
+            <h3>Login</h3>
+            <p>Área reservada para acesso de usuários, administradores ou responsáveis.</p>
+          </article>
+        </a>
       </div>
     </section>
 
+    <!-- Seção de Contatos Rápidos -->
     <section class="modules" id="contato">
       <div class="section-head">
         <h2>Contato</h2>
@@ -140,22 +193,72 @@
       </div>
 
       <div class="dashboard">
-        <article class="panel">
-          <h3>E-mail</h3>
-          <p>contato@soulstreet.com</p>
-        </article>
+        <a href="contato.html" target="_blank">
+          <article class="panel">
+            <h3>E-mail</h3>
+            <p>contato@soulstreet.com</p>
+          </article>
+        </a>
 
-        <article class="panel">
-          <h3>Telefone</h3>
-          <p>(11) 99999-9999</p>
-        </article>
+        <a href="contato.html" target="_blank">
+          <article class="panel">
+            <h3>Telefone</h3>
+            <p>(11) 4402-8922</p>
+          </article>
+        </a>
 
-        <article class="panel">
-          <h3>Redes sociais</h3>
-          <p>@soulstreet.oficial</p>
-        </article>
+        <a href="contato.html" target="_blank">
+          <article class="panel">
+            <h3>Redes sociais</h3>
+            <p>@soulstreet.oficial</p>
+          </article>
+        </a>
       </div>
     </section>
   </main>
-</body>
-</html>
+
+  <!-- LÓGICA DO SCRIPT DE PRODUTOS -->
+  <script>
+    // Lista de produtos exemplo
+    const listaProdutos = [
+      { id: 1, nome: "Camiseta Soul Cyber", desc: "Algodão premium com estampa refletiva de alta durabilidade.", preco: "R$ 119,90" },
+      { id: 2, nome: "Shape Marfim 8.0", desc: "Shape de alta performance com 7 lâminas selecionadas.", preco: "R$ 249,00" },
+      { id: 3, nome: "Moletom Oversized", desc: "Corte moderno europeu com capuz ajustável e bolso canguru.", preco: "R$ 289,90" },
+      { id: 4, nome: "Glow Spray Can Art", desc: "Lata decorativa customizada à mão por grafiteiros locais.", preco: "R$ 85,00" },
+      { id: 5, nome: "Shoulder Bag Tech", desc: "Material impermeável com divisórias e alça regulável.", preco: "R$ 140,00" },
+      { id: 6, nome: "Gorro Knit Street", desc: "Touca de malha pesada com etiqueta frontal emborrachada.", preco: "R$ 69,90" }
+    ];
+
+    let itensCarregados = 0;
+    const quantidadePorDrop = 3; // Exibe de 3 em 3 produtos
+
+    const containerProdutos = document.getElementById('product-container');
+    const botaoVerMais = document.getElementById('btn-load-more');
+
+    function carregarProdutos() {
+      // Recorta os próximos produtos da nossa lista
+      const proximosItens = listaProdutos.slice(itensCarregados, itensCarregados + quantidadePorDrop);
+      
+      proximosItens.forEach(produto => {
+        const itemArtigo = document.createElement('article');
+        itemArtigo.className = 'panel';
+        
+        itemArtigo.innerHTML = `
+          <h3>${produto.nome}</h3>
+          <p style="margin-bottom: 20px; font-size: 0.9rem; color: #b5b5b5;">${produto.desc}</p>
+          <strong style="color: #00d1b2; font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; display: block;">${produto.preco}</strong>
+        `;
+        
+        containerProdutos.appendChild(itemArtigo);
+      });
+
+      itensCarregados += proximosItens.length;
+
+      // Oculta o botão se não houver mais produtos para exibir
+      if (itensCarregados >= listaProdutos.length) {
+        botaoVerMais.style.display = 'none';
+      }
+    }
+
+    // Inicializa carregando a primeira leva de itens
+    document.addEventListener('DOMContentLoaded', carregarProdutos);
