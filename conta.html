@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Soul Street | Minha Conta</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="login-box">
+
+            <h1>SOUL STREET</h1>
+
+            <p class="subtitle">Minha conta</p>
+
+            <div class="perfil">
+
+                <h2>Olá, <span id="nomeUsuario"></span>!</h2>
+
+                <p class="info-titulo">E-mail</p>
+                <p id="emailUsuario" class="info"></p>
+
+                <button id="sair" type="button">
+                    SAIR DA CONTA
+                </button>
+
+                <a href="index.html" class="voltar">
+                    ← Voltar para Home
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        // Verifica se o usuário está logado
+        const logado = localStorage.getItem("soulStreetLogado");
+        const usuarioSalvo = localStorage.getItem("soulStreetUsuario");
+
+        if (logado !== "true" || !usuarioSalvo) {
+            window.location.href = "login.html";
+        }
+
+        // Recupera os dados do usuário
+        const usuario = JSON.parse(usuarioSalvo);
+
+        document.getElementById("nomeUsuario").textContent = usuario.nome;
+        document.getElementById("emailUsuario").textContent = usuario.email;
+
+        // Botão sair
+        document.getElementById("sair").addEventListener("click", function () {
+
+            localStorage.removeItem("soulStreetLogado");
+
+            window.location.href = "login.html";
+        });
+    </script>
+
+</body>
+
+</html>
