@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="produtos.css">
 </head>
 <body>
     <main class="container" style="padding-top: 60px;">
@@ -16,23 +16,44 @@
             <p>Explore a coleção completa da Soul Street.</p>
         </section>
 
-        <div class="dashboard">
-            <article class="panel">
-                <h3>Camisas</h3>
-                <p>Modelagens oversized e estampas exclusivas inspiradas na cultura urbana.</p>
-                <img src="12_09_55_895_1594198295_camiseta-oversized-angel-cinza-lan__amento-bulking__4.avif">
-            </article>
+        <section class="categorias">
 
-            <article class="panel">
-                <h3>Calças</h3>
-                <p>Estilo cargo e moletom premium para o máximo de conforto e atitude.</p>
-            </article>
-
-            <article class="panel">
-                <h3>Tênis</h3>
-                <p>Design moderno e resistência para acompanhar o ritmo das ruas.</p>
-            </article>
-        </div>
+            <div class="categoria" onclick="abrirCategoria('camisas')">
+        
+                <h2>Camisas</h2>
+        
+                <p>
+                    Modelagens oversized e estampas exclusivas
+                    inspiradas na cultura urbana.
+                </p>
+        
+            </div>
+        
+        
+            <div class="categoria" onclick="abrirCategoria('calcas')">
+        
+                <h2>Calças</h2>
+        
+                <p>
+                    Estilo cargo e moletom premium para o máximo
+                    de conforto e atitude.
+                </p>
+        
+            </div>
+        
+        
+            <div class="categoria" onclick="abrirCategoria('tenis')">
+        
+                <h2>Tênis</h2>
+        
+                <p>
+                    Design moderno e resistência para acompanhar
+                    o ritmo das ruas.
+                </p>
+        
+            </div>
+        
+        </section>
     </main>
 </body>
 </html>
