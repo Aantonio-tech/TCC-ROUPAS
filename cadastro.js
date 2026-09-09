@@ -1,50 +1,51 @@
-document.getElementById("cadastroForm").addEventListener("submit", function(event) {
+const cadastroForm = document.getElementById("cadastroForm");
+const mensagem = document.getElementById("mensagem");
 
+cadastroForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const nome = document.getElementById("nome").value.trim();
-    const email = document.getElementById("email").value.trim().toLowerCase();
+    const email = document.getElementById("email").value.trim();
     const senha = document.getElementById("senha").value;
     const confirmarSenha = document.getElementById("confirmarSenha").value;
-    const mensagem = document.getElementById("mensagem");
 
     // Verifica se as senhas são iguais
     if (senha !== confirmarSenha) {
         mensagem.textContent = "As senhas não são iguais.";
-        mensagem.style.color = "#ff4d4d";
+        mensagem.style.color = "#ff5a1f";
         return;
     }
 
-    // Recupera usuários cadastrados
-    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+    // Verifica se já existe uma conta
+    const usuarioExistente = localStorage.getItem("soulStreetUsuario");
 
-    // Verifica se o e-mail já existe
-    const usuarioExiste = usuarios.some(usuario => usuario.email === email);
+    if (usuarioExistente) {
+        const usuario = JSON.parse(usuarioExistente);
 
-    if (usuarioExiste) {
-        mensagem.textContent = "Este e-mail já está cadastrado.";
-        mensagem.style.color = "#ff4d4d";
-        return;
+        if (usuario.email === email) {
+            mensagem.textContent = "Este e-mail já está cadastrado.";
+            mensagem.style.color = "#ff5a1f";
+            return;
+        }
     }
 
-    // Cria novo usuário
-    const novoUsuario = {
+    // Cria o usuário
+    const usuario = {
         nome: nome,
         email: email,
         senha: senha
     };
 
-    usuarios.push(novoUsuario);
 
     // Salva no navegador
-    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+    localStorage.setItem("soulStreetUsuario", JSON.stringify(usuario));
 
-    mensagem.textContent = "Cadastro realizado com sucesso!";
+    mensagem.textContent = "Conta criada com sucesso!";
     mensagem.style.color = "#00d1b2";
 
-    // Vai para o login depois de 1 segundo
-    setTimeout(() => {
+    // Depois de 1 segundo, vai para o login
+    setTimeout(function () {
         window.location.href = "login.html";
     }, 1000);
-
+    
 });

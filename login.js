@@ -1,36 +1,34 @@
-document.getElementById("loginForm").addEventListener("submit", function(event) {
+const loginForm = document.getElementById("loginForm");
+const mensagem = document.getElementById("mensagem");
 
+loginForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const email = document.getElementById("email").value.trim().toLowerCase();
+    const email = document.getElementById("email").value.trim();
     const senha = document.getElementById("senha").value;
-    const mensagem = document.getElementById("mensagem");
 
-    // Busca os usuários cadastrados
-    const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+    // Busca o usuário cadastrado
+    const usuarioSalvo = localStorage.getItem("soulStreetUsuario");
 
-    // Procura usuário com e-mail e senha corretos
-    const usuario = usuarios.find(
-        usuario => usuario.email === email && usuario.senha === senha
-    );
-
-    if (usuario) {
-
-        // Salva o usuário logado
-        localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
-
-        mensagem.textContent = "Login realizado com sucesso!";
-        mensagem.style.color = "#00d1b2";
-
-        setTimeout(() => {
-            window.location.href = "index.html";
-        }, 1000);
-
-    } else {
-
-        mensagem.textContent = "E-mail ou senha incorretos.";
-        mensagem.style.color = "#ff4d4d";
-
+    if (!usuarioSalvo) {
+        mensagem.textContent = "Nenhuma conta foi cadastrada.";
+        mensagem.style.color = "#ff5a1f";
+        return;
     }
 
+    const usuario = JSON.parse(usuarioSalvo);
+
+    // Verifica login
+    if (email === usuario.email && senha === usuario.senha) {
+
+        // Marca que o usuário está logado
+        localStorage.setItem("soulStreetLogado", "true");
+
+        // Vai para a página da conta
+        window.location.href = "conta.html";
+
+    } else {
+        mensagem.textContent = "E-mail ou senha incorretos.";
+        mensagem.style.color = "#ff5a1f";
+    }
 });

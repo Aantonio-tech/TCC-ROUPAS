@@ -43,6 +43,31 @@
     }
   </style>
 </head>
+<script>
+  const menuConta = document.getElementById("menuConta");
+
+  const usuarioLogado = localStorage.getItem("soulStreetLogado");
+  const usuarioSalvo = localStorage.getItem("soulStreetUsuario");
+
+  if (usuarioLogado === "true" && usuarioSalvo) {
+
+      const usuario = JSON.parse(usuarioSalvo);
+
+      menuConta.innerHTML = `
+          <a href="conta.html">
+              Olá, ${usuario.nome}
+          </a>
+      `;
+
+  } else {
+
+      menuConta.innerHTML = `
+          <a href="login.html">
+              Login
+          </a>
+      `;
+  }
+</script>
 <body>
   <header>
     <div class="container nav">
@@ -61,7 +86,9 @@
           <li><a href="produtos.html">Produtos</a></li>
           <li><a href="colaboradores.html" >Colaboradores</a></li>
           <li><a href="contato.html" >Contato</a></li>
-          <li><a href="login.html" >Login</a>
+          <li id="menuConta">
+            <a href="login.html">Login</a>
+        </li>
         </li>
         </li>
         </ul>
