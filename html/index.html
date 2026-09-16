@@ -1,11 +1,37 @@
 <!DOCTYPE html> 
 <html lang="pt-BR">
 <head>
+  <body>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Soul Street | Home</title>
   <meta name="description" content="Home simples da Soul Street com acesso para login, produtos, colaboradores e contatos." />
+  
+</body>
+<div id="carrinho-container" class="carrinho-container">
+  <div class="carrinho-box">
 
+    <div class="carrinho-header">
+      <h2>Seu Carrinho</h2>
+      <button id="fechar-carrinho">✕</button>
+    </div>
+
+    <div id="lista-carrinho">
+      <p class="carrinho-vazio">Seu carrinho está vazio.</p>
+    </div>
+
+    <div class="carrinho-footer">
+      <strong>
+        Total: R$ <span id="total-carrinho">0,00</span>
+      </strong>
+
+      <button id="finalizar-compra" class="btn btn-primary">
+        Finalizar compra
+      </button>
+    </div>
+
+  </div>
+</div>
 </html>
 
   <!-- Links do Google Fonts corrigidos -->
@@ -66,31 +92,46 @@
           </a>
       `;
   }
-</script>
+</script>r
 <body>
   <header>
     <a href="index.html" class="brand">
-     
+      <div class="brand-mark"></div>
   
-      <div class="logo">
-        <h1>SOUL STREET</h1>
-        <p>URBAN CULTURE</p>
-    </div>
+      <div class="brand-area">
+          <div class="brand-text">
+              <strong>SOUL STREET</strong>
+              <span>Urban Culture</span>
+          </div>
   
-          
+          <div class="brand-stats">
+              <div>
+                  <strong>7</strong>
+                  <span>Colaboradores</span>
+              </div>
+  
+              <div>
+                  <strong>100%</strong>
+                  <span>Projeto escolar</span>
+              </div>
           </div>
       </div>
   </a>
 
       <!-- Menu ajustado para abrir páginas novas em outra aba -->
       <nav>
+        <li>
+          <button id="btn-carrinho" class="btn-carrinho">
+            🛒 Carrinho (<span id="contador-carrinho">0</span>)
+          </button>
+        </li>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="../html/produtos.html">Produtos</a></li>
-          <li><a href="../html/colaboradores.html" >Colaboradores</a></li>
-          <li><a href="../html/contatos.html" >Contato</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="colaboradores.html" >Colaboradores</a></li>
+          <li><a href="contato.html" >Contato</a></li>
           <li id="menuConta"><a href="login.html">Login</a>
-          <li><a href="../html/conta.html"> Contas</a></li>
+          <li><a href="conta.html"> Contas</a></li>
         </li>
         </li>
         </li>
@@ -101,12 +142,17 @@
 
   <main class="container">
     <!-- Seção Principal (Hero) -->
-    <section class="hero">
+    <section class="hero" id="home">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="tag">Nova coleção 2026</div>
+          <h1>Estilo urbano com identidade</h1>
+          <p>
+            A Soul Street é um projeto inspirado na cultura de rua, misturando moda,
+            atitude e criatividade. Aqui você pode conhecer produtos, colaboradores
+            e formas de contato de maneira moderna e organizada.
+          </p>
 
-<<<<<<< HEAD
-      <div class="hero-tag">
-          NOVA COLEÇÃO 2026
-=======
           <!-- Botões da página principal mantidos como links internos, altere se preferir -->
           <div class="hero-actions">
             <a href="produtos.html" target="_blank" class="btn btn-primary">Ver Produtos</a>
@@ -115,7 +161,14 @@
 
           <div class="hero-stats">
             <div>
-            
+            <div>
+              <strong>6</strong>
+              <span>Colaboradores</span>
+            </div>
+            <div>
+              <strong>100%</strong>
+              <span>Projeto escolar</span>
+            </div>
           </div>
         </div>
 
@@ -123,34 +176,18 @@
             <div>
           </div>
         </div>
->>>>>>> 7ed69616ee0448e79505f34f604cbcd4cfb66c8b
       </div>
-  
-      <h1>ESTILO URBANO COM IDENTIDADE</h1>
-  
-      <p>
-          A Soul Street é um projeto inspirado na cultura de rua,
-          misturando moda, atitude e criatividade.<br>
-          Aqui você pode conhecer produtos, colaboradores e formas
-          de contato de maneira moderna e organizada.
-      </p>
-  
-      <div class="hero-buttons">
-          <a href="produtos.html" class="btn btn-primary">
-              VER PRODUTOS
-          </a>
-  
-          <a href="contato.html" class="btn btn-secondary">
-              FALE CONOSCO
-          </a>
-      </div>
-  
-  </section>
+    </section>
 
     <!-- Seção de Produtos com Carregamento Dinâmico -->
     <section class="modules" id="produtos">
       <div class="section-head">
-      </section>
+        <h2>Destaques da Coleção</h2>
+        <p>
+          Explore as peças exclusivas da nossa linha Urban Culture. Clique em "Ver Mais" 
+          para descobrir novos itens do nosso drop.
+        </p>
+      </div>
 
       <!-- Container onde o JavaScript injetará os produtos -->
       <div class="dashboard-products" id="product-container"></div>
@@ -272,4 +309,46 @@
     }
 
     // Inicializa carregando a primeira leva de itens
-    document.addEventListener('DOMContentLoaded', carregarProdutos);
+    document.addEventListener('DOMContentLoaded', carregarProdutos)
+  </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+    const botao = document.getElementById("btn-carrinho");
+    const carrinho = document.getElementById("carrinho-container");
+    const fechar = document.getElementById("fechar-carrinho");
+
+    if (botao && carrinho) {
+
+        botao.onclick = function() {
+            carrinho.style.position = "fixed";
+            carrinho.style.top = "0";
+            carrinho.style.right = "0";
+            carrinho.style.width = "400px";
+            carrinho.style.maxWidth = "90%";
+            carrinho.style.height = "100vh";
+            carrinho.style.background = "#111";
+            carrinho.style.color = "white";
+            carrinho.style.zIndex = "99999";
+            carrinho.style.padding = "25px";
+            carrinho.style.boxSizing = "border-box";
+            carrinho.style.overflowY = "auto";
+            carrinho.style.display = "block";
+        };
+
+    }
+
+    if (fechar && carrinho) {
+
+        fechar.onclick = function() {
+            carrinho.style.right = "-500px";
+        };
+
+    }
+
+});
+</script>
+
+</body>
+</html>

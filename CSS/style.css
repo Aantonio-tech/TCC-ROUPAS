@@ -58,7 +58,12 @@ header {
     gap: 12px;
 }
 
-
+.brand-mark {
+    width: 16px;
+    height: 16px;
+    background-color: #ff5a1f;
+    transform: rotate(45deg);
+}
 
 .brand-text {
     display: flex;
@@ -138,15 +143,6 @@ nav a:hover {
 }
 
 /* Botões */
-
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-    margin-top: 45px;
-}
-
 .hero-actions {
     display: flex;
     gap: 16px;
@@ -422,17 +418,117 @@ nav a:hover {
     color: #8c8c8c;
     white-space: nowrap;
 }
-.logo {
-    text-align: center;
-    width: 100%;
+/* =========================
+   CARRINHO
+========================= */
+
+.btn-carrinho {
+    background: transparent;
+    border: 1px solid #00d1b2;
+    color: #00d1b2;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-.logo h1 {
+.btn-carrinho:hover {
+    background: #00d1b2;
+    color: #111;
+}
+
+.carrinho-container {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 420px;
+    max-width: 90%;
+    height: 100vh;
+    background: #111;
+    z-index: 9999;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+    transition: right 0.3s ease;
+    overflow-y: auto;
+}
+
+.carrinho-container.aberto {
+    right: 0;
+}
+
+.carrinho-box {
+    padding: 25px;
+}
+
+.carrinho-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.carrinho-header h2 {
     margin: 0;
-    text-align: center;
 }
 
-.logo p {
-    margin: 5px 0 0;
-    text-align: center;
+#fechar-carrinho {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
 }
+
+.item-carrinho {
+    border-bottom: 1px solid #333;
+    padding: 15px 0;
+}
+
+.item-carrinho h3 {
+    margin: 0 0 8px;
+}
+
+.item-preco {
+    color: #00d1b2;
+    font-weight: bold;
+}
+
+.controles-carrinho {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.controles-carrinho button {
+    background: #222;
+    color: white;
+    border: 1px solid #444;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.remover-produto {
+    color: #ff4d4d !important;
+}
+
+.carrinho-footer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+
+.carrinho-footer strong {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.carrinho-vazio {
+    color: #aaa;
+    text-align: center;
+    padding: 40px 0;
+}   
