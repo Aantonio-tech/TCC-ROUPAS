@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Soul Street | Home</title>
   <meta name="description" content="Home simples da Soul Street com acesso para login, produtos, colaboradores e contatos." />
-  
-</body>
+
 </html>
 
   <!-- Links do Google Fonts corrigidos -->
@@ -67,28 +66,18 @@
           </a>
       `;
   }
-</script>r
+</script>
 <body>
   <header>
     <a href="index.html" class="brand">
-      <div class="brand-mark"></div>
+     
   
-      <div class="brand-area">
-          <div class="brand-text">
-              <strong>SOUL STREET</strong>
-              <span>Urban Culture</span>
-          </div>
+      <div class="logo">
+        <h1>SOUL STREET</h1>
+        <p>URBAN CULTURE</p>
+    </div>
   
-          <div class="brand-stats">
-              <div>
-                  <strong>7</strong>
-                  <span>Colaboradores</span>
-              </div>
-  
-              <div>
-                  <strong>100%</strong>
-                  <span>Projeto escolar</span>
-              </div>
+          
           </div>
       </div>
   </a>
@@ -112,52 +101,37 @@
 
   <main class="container">
     <!-- Seção Principal (Hero) -->
-    <section class="hero" id="home">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <div class="tag">Nova coleção 2026</div>
-          <h1>Estilo urbano com identidade</h1>
-          <p>
-            A Soul Street é um projeto inspirado na cultura de rua, misturando moda,
-            atitude e criatividade. Aqui você pode conhecer produtos, colaboradores
-            e formas de contato de maneira moderna e organizada.
-          </p>
+    <section class="hero">
 
-          <!-- Botões da página principal mantidos como links internos, altere se preferir -->
-          <div class="hero-actions">
-            <a href="produtos.html" target="_blank" class="btn btn-primary">Ver Produtos</a>
-            <a href="contato.html" target="_blank" class="btn btn-secondary">Fale Conosco</a>
-          </div>
-
-          <div class="hero-stats">
-            <div>
-            <div>
-              <strong>6</strong>
-              <span>Colaboradores</span>
-            </div>
-            <div>
-              <strong>100%</strong>
-              <span>Projeto escolar</span>
-            </div>
-          </div>
-        </div>
-
-          <div class="visual-note">
-            <div>
-          </div>
-        </div>
+      <div class="hero-tag">
+          NOVA COLEÇÃO 2026
       </div>
-    </section>
+  
+      <h1>ESTILO URBANO COM IDENTIDADE</h1>
+  
+      <p>
+          A Soul Street é um projeto inspirado na cultura de rua,
+          misturando moda, atitude e criatividade.<br>
+          Aqui você pode conhecer produtos, colaboradores e formas
+          de contato de maneira moderna e organizada.
+      </p>
+  
+      <div class="hero-buttons">
+          <a href="produtos.html" class="btn btn-primary">
+              VER PRODUTOS
+          </a>
+  
+          <a href="contato.html" class="btn btn-secondary">
+              FALE CONOSCO
+          </a>
+      </div>
+  
+  </section>
 
     <!-- Seção de Produtos com Carregamento Dinâmico -->
     <section class="modules" id="produtos">
       <div class="section-head">
-        <h2>Destaques da Coleção</h2>
-        <p>
-          Explore as peças exclusivas da nossa linha Urban Culture. Clique em "Ver Mais" 
-          para descobrir novos itens do nosso drop.
-        </p>
-      </div>
+      </section>
 
       <!-- Container onde o JavaScript injetará os produtos -->
       <div class="dashboard-products" id="product-container"></div>
