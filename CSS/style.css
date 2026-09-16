@@ -98,6 +98,7 @@ header {
 }
 
 
+
 .logo {
 
     text-align: center;
@@ -339,30 +340,21 @@ nav a:hover {
     text-align: center;
 }
 
-
-/* =========================================================
-   BOTÕES DO HERO
-========================================================= */
+/* Botões */
 
 .hero-buttons {
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     gap: 24px;
-
     margin-top: 45px;
-
-    width: 100%;
 }
 
-
-/* =========================================================
-   BOTÕES
-========================================================= */
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 40px;
+}
 
 .btn {
 
@@ -768,121 +760,25 @@ nav a:hover {
 .user-info span {
 
     color: #00d1b2;
-
-    font-size: 12px;
-
-    margin-top: 2px;
+    line-height: 1;
 }
 
-
-/* =========================================================
-   RESPONSIVIDADE
-========================================================= */
-
-@media (max-width: 900px) {
-
-    .dashboard-products,
-    .dashboard {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-
-    nav ul {
-
-        gap: 20px;
-    }
-
+.brand-stats span {
+    font-size: 0.65rem;
+    color: #8c8c8c;
+    white-space: nowrap;
+}
+.logo {
+    text-align: center;
+    width: 100%;
 }
 
+.logo h1 {
+    margin: 0;
+    text-align: center;
+}
 
-@media (max-width: 650px) {
-
-    .header-container {
-
-        padding: 15px 15px 12px;
-    }
-
-
-    .logo h1 {
-
-        font-size: 1.9rem;
-    }
-
-
-    .brand-stats {
-
-        gap: 20px;
-    }
-
-
-    nav ul {
-
-        gap: 12px 18px;
-    }
-
-
-    nav a {
-
-        font-size: 0.9rem;
-    }
-
-
-    .hero {
-
-        padding: 65px 20px 80px;
-    }
-
-
-    .hero h1 {
-
-        font-size: 3rem;
-    }
-
-
-    .hero p {
-
-        font-size: 1rem;
-    }
-
-
-    .hero-buttons {
-
-        flex-direction: column;
-
-        gap: 15px;
-    }
-
-
-    .btn {
-
-        width: 100%;
-
-        max-width: 330px;
-    }
-
-
-    .dashboard-products,
-    .dashboard {
-
-        grid-template-columns: 1fr;
-    }
-
-
-    .section-head h2 {
-
-        font-size: 2.5rem;
-    }
-
-
-    .user-profile {
-
-        right: 15px;
-
-        bottom: 15px;
-
-        padding: 10px 14px;
-    }
-
+.logo p {
+    margin: 5px 0 0;
+    text-align: center;
 }
