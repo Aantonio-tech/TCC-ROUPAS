@@ -1,275 +1,619 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Soul Street | Home</title>
-  <meta name="description" content="Home simples da Soul Street com acesso para login, produtos, colaboradores e contatos." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Soul Street | Home</title>
+
+    <meta name="description"
+        content="Home da Soul Street com acesso para produtos, colaboradores, contato e conta.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         CABEÇALHO
+    ====================================================== -->
+
+    <header>
+
+        <div class="header-container">
+
+            <!-- LOGO -->
+            <a href="index.html" class="brand">
+
+                <div class="logo">
+                    <h1>SOUL STREET</h1>
+                    <p>URBAN CULTURE</p>
+                </div>
+
+                <!-- Informações do projeto -->
+                <div class="brand-stats">
+
+                    <div>
+                        <strong>7</strong>
+                        <span>Colaboradores</span>
+                    </div>
+
+                    <div>
+                        <strong>100%</strong>
+                        <span>Projeto escolar</span>
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- MENU -->
+            <nav>
+                <ul>
+
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="produtos.html">Produtos</a>
+                    </li>
+
+                    <li>
+                        <a href="colaboradores.html">Colaboradores</a>
+                    </li>
+
+                    <li>
+                        <a href="contato.html">Contato</a>
+                    </li>
+
+                    <!-- Login / usuário -->
+                    <li id="menuConta">
+                        <a href="login.html">Login</a>
+                    </li>
+
+                    <li>
+                        <a href="conta.html">Contas</a>
+                    </li>
+
+                </ul>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="hero-tag">
+                    NOVA COLEÇÃO 2026
+                </div>
+
+
+                <h1>
+                    ESTILO URBANO COM IDENTIDADE
+                </h1>
+
+
+                <p>
+                    A Soul Street é um projeto inspirado na cultura de rua,
+                    misturando moda, atitude e criatividade.
+                    <br>
+                    Aqui você pode conhecer produtos, colaboradores e formas
+                    de contato de maneira moderna e organizada.
+                </p>
+
+
+                <!-- BOTÕES -->
+                <div class="hero-buttons">
+
+                    <a href="produtos.html" class="btn btn-primary">
+                        VER PRODUTOS
+                    </a>
+
+                    <a href="contato.html" class="btn btn-secondary">
+                        FALE CONOSCO
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             DESTAQUES DA COLEÇÃO
+        ================================================== -->
+
+        <section class="modules" id="produtos">
+
+            <div class="section-head">
+
+                <h2>
+                    DESTAQUES DA COLEÇÃO
+                </h2>
+
+                <p>
+                    Explore as peças exclusivas da nossa linha Urban Culture.
+                    Clique em "Ver Mais" para descobrir novos itens do nosso drop.
+                </p>
+
+            </div>
+
+
+            <!-- PRODUTOS -->
+            <div
+                class="dashboard-products"
+                id="product-container">
+            </div>
+
+
+            <!-- BOTÃO VER MAIS -->
+            <div class="load-more-container">
+
+                <button
+                    id="btn-load-more"
+                    class="btn btn-secondary"
+                    type="button">
+
+                    VER MAIS
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SEÇÕES DO PROJETO
+        ================================================== -->
+
+        <section class="modules" id="secoes">
+
+            <div class="section-head">
+
+                <h2>
+                    SEÇÕES DO PROJETO
+                </h2>
+
+                <p>
+                    Essa homepage foi organizada para servir como entrada
+                    principal do seu projeto escolar, com áreas que levam
+                    para produtos, colaboradores, login e contato.
+                </p>
+
+            </div>
+
+
+            <div class="dashboard">
+
+
+                <!-- PRODUTOS -->
+                <a href="produtos.html">
+
+                    <article class="panel">
+
+                        <h3>
+                            Produtos
+                        </h3>
+
+                        <p>
+                            Veja os itens da coleção Soul Street
+                            com estilo urbano e visual moderno.
+                        </p>
+
+                    </article>
+
+                </a>
+
+
+                <!-- COLABORADORES -->
+                <a href="colaboradores.html">
+
+                    <article class="panel">
+
+                        <h3>
+                            Colaboradores
+                        </h3>
+
+                        <p>
+                            Conheça as pessoas que ajudam a construir
+                            o projeto e a identidade da marca.
+                        </p>
+
+                    </article>
+
+                </a>
+
+
+                <!-- LOGIN -->
+                <a href="login.html">
+
+                    <article class="panel">
+
+                        <h3>
+                            Login
+                        </h3>
+
+                        <p>
+                            Entre na sua conta ou crie um novo
+                            cadastro na Soul Street.
+                        </p>
+
+                    </article>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CONTATO
+        ================================================== -->
+
+        <section class="modules" id="contato">
+
+            <div class="section-head">
+
+                <h2>
+                    CONTATO
+                </h2>
+
+                <p>
+                    Entre em contato com a Soul Street através
+                    dos nossos canais de comunicação.
+                </p>
+
+            </div>
+
+
+            <div class="dashboard">
+
+
+                <!-- EMAIL -->
+                <a href="contato.html">
+
+                    <article class="panel">
+
+                        <h3>
+                            E-mail
+                        </h3>
+
+                        <p>
+                            contato@soulstreet.com
+                        </p>
+
+                    </article>
+
+                </a>
+
+
+                <!-- TELEFONE -->
+                <article class="panel">
+
+                    <h3>
+                        Telefone
+                    </h3>
+
+                    <p>
+                        (11) 98710-5104
+                    </p>
+
+                </article>
+
+
+                <!-- REDES SOCIAIS -->
+                <a href="contato.html">
+
+                    <article class="panel">
+
+                        <h3>
+                            Redes sociais
+                        </h3>
+
+                        <p>
+                            @soulstreet.oficial
+                        </p>
+
+                    </article>
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         PERFIL DO USUÁRIO
+    ====================================================== -->
+
+    <div id="userProfile" class="user-profile">
+
+        <div
+            class="user-avatar"
+            id="userAvatar">
+            U
+        </div>
+
+        <div class="user-info">
+
+            <strong id="userName">
+                Usuário
+            </strong>
+
+            <span>
+                Conta criada
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        /* =================================================
+           LOGIN / USUÁRIO
+        ================================================== */
+
+        function atualizarUsuario() {
+
+            const menuConta = document.getElementById("menuConta");
+            const userProfile = document.getElementById("userProfile");
+            const userName = document.getElementById("userName");
+            const userAvatar = document.getElementById("userAvatar");
+
+            const usuarioLogado =
+                localStorage.getItem("soulStreetLogado");
+
+            const usuarioSalvo =
+                localStorage.getItem("soulStreetUsuario");
+
+
+            /* Se existe usuário logado */
+            if (usuarioLogado === "true" && usuarioSalvo) {
+
+                const usuario =
+                    JSON.parse(usuarioSalvo);
+
+
+                /* Atualiza o menu */
+                menuConta.innerHTML = `
+                    <a href="conta.html">
+                        Olá, ${usuario.nome}
+                    </a>
+                `;
+
+
+                /* Mostra o perfil */
+                userProfile.style.display = "flex";
+
+                userName.textContent =
+                    usuario.nome;
+
+
+                /* Primeira letra do nome */
+                userAvatar.textContent =
+                    usuario.nome
+                        .charAt(0)
+                        .toUpperCase();
+
+            }
+
+            /* Se não existe usuário */
+            else {
+
+                menuConta.innerHTML = `
+                    <a href="login.html">
+                        Login
+                    </a>
+                `;
+
+                userProfile.style.display = "none";
+            }
+
+        }
+
+
+
+        /* =================================================
+           PRODUTOS
+        ================================================== */
+
+        const listaProdutos = [
+
+            {
+                id: 1,
+                nome: "Camiseta Soul Cyber",
+                desc: "Algodão premium com estampa refletiva de alta durabilidade.",
+                preco: "R$ 119,90"
+            },
+
+            {
+                id: 2,
+                nome: "Shape Marfim 8.0",
+                desc: "Shape de alta performance com 7 lâminas selecionadas.",
+                preco: "R$ 249,00"
+            },
+
+            {
+                id: 3,
+                nome: "Moletom Oversized",
+                desc: "Corte moderno com capuz ajustável e bolso canguru.",
+                preco: "R$ 289,90"
+            },
+
+            {
+                id: 4,
+                nome: "Glow Spray Can Art",
+                desc: "Lata decorativa customizada à mão por grafiteiros locais.",
+                preco: "R$ 85,00"
+            },
+
+            {
+                id: 5,
+                nome: "Shoulder Bag Tech",
+                desc: "Material impermeável com divisórias e alça regulável.",
+                preco: "R$ 140,00"
+            },
+
+            {
+                id: 6,
+                nome: "Gorro Knit Street",
+                desc: "Touca de malha pesada com etiqueta frontal.",
+                preco: "R$ 69,90"
+            }
+
+        ];
+
+
+        let itensCarregados = 0;
+
+        const quantidadePorDrop = 3;
+
+
+        const containerProdutos =
+            document.getElementById("product-container");
+
+        const botaoVerMais =
+            document.getElementById("btn-load-more");
+
+
+
+        /* =================================================
+           CARREGAR PRODUTOS
+        ================================================== */
+
+        function carregarProdutos() {
+
+            const proximosItens =
+                listaProdutos.slice(
+                    itensCarregados,
+                    itensCarregados + quantidadePorDrop
+                );
+
+
+            proximosItens.forEach(produto => {
+
+                const item =
+                    document.createElement("article");
+
+                item.className = "panel";
+
+
+                item.innerHTML = `
+
+                    <div>
+
+                        <h3>
+                            ${produto.nome}
+                        </h3>
+
+                        <p class="product-description">
+                            ${produto.desc}
+                        </p>
+
+                    </div>
+
+                    <strong class="product-price">
+                        ${produto.preco}
+                    </strong>
+
+                `;
+
+
+                containerProdutos.appendChild(item);
+
+            });
+
+
+            itensCarregados +=
+                proximosItens.length;
+
+
+            /* Esconde o botão quando terminar */
+            if (
+                itensCarregados >=
+                listaProdutos.length
+            ) {
+
+                botaoVerMais.style.display =
+                    "none";
+
+            }
+
+        }
+
+
+
+        /* =================================================
+           BOTÃO VER MAIS
+        ================================================== */
+
+        botaoVerMais.addEventListener(
+            "click",
+            carregarProdutos
+        );
+
+
+
+        /* =================================================
+           INICIALIZAÇÃO
+        ================================================== */
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                atualizarUsuario();
+
+                carregarProdutos();
+
+            }
+        );
+
+    </script>
+
+</body>
 
 </html>
-
-  <!-- Links do Google Fonts corrigidos -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="../CSS/style.css">
-  
-  <!-- Estilos extras para o Botão Ver Mais e Alinhamento -->
-  <style>
-    .load-more-container {
-        display: flex;
-        justify-content: center;
-        margin-top: 40px;
-        width: 100%;
-    }
-    #btn-load-more {
-        cursor: pointer;
-        background-color: transparent;
-        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-    /* Garante que os cards dinâmicos fiquem alinhados verticalmente */
-    .dashboard-products .panel {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-    }
-    .dashboard-products {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-    }
-  </style>
-</head>
-<script>
-  const menuConta = document.getElementById("menuConta");
-
-  const usuarioLogado = localStorage.getItem("soulStreetLogado");
-  const usuarioSalvo = localStorage.getItem("soulStreetUsuario");
-
-  if (usuarioLogado === "true" && usuarioSalvo) {
-
-      const usuario = JSON.parse(usuarioSalvo);
-
-      menuConta.innerHTML = `
-          <a href="conta.html">
-              Olá, ${usuario.nome}
-          </a>
-      `;
-
-  } else {
-
-      menuConta.innerHTML = `
-          <a href="login.html">
-              Login
-          </a>
-      `;
-  }
-</script>
-<body>
-  <header>
-    <a href="index.html" class="brand">
-     
-  
-      <div class="logo">
-        <h1>SOUL STREET</h1>
-        <p>URBAN CULTURE</p>
-    </div>
-  
-          
-          </div>
-      </div>
-  </a>
-
-      <!-- Menu ajustado para abrir páginas novas em outra aba -->
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="../html/produtos.html">Produtos</a></li>
-          <li><a href="../html/colaboradores.html" >Colaboradores</a></li>
-          <li><a href="../html/contatos.html" >Contato</a></li>
-          <li id="menuConta"><a href="login.html">Login</a>
-          <li><a href="../html/conta.html"> Contas</a></li>
-        </li>
-        </li>
-        </li>
-        </ul>
-      </nav>
-    </div> <!-- Fechamento da div .container nav corrigido -->
-  </header>
-
-  <main class="container">
-    <!-- Seção Principal (Hero) -->
-    <section class="hero">
-
-<<<<<<< HEAD
-      <div class="hero-tag">
-          NOVA COLEÇÃO 2026
-=======
-          <!-- Botões da página principal mantidos como links internos, altere se preferir -->
-          <div class="hero-actions">
-            <a href="produtos.html" target="_blank" class="btn btn-primary">Ver Produtos</a>
-            <a href="contato.html" target="_blank" class="btn btn-secondary">Fale Conosco</a>
-          </div>
-
-          <div class="hero-stats">
-            <div>
-            
-          </div>
-        </div>
-
-          <div class="visual-note">
-            <div>
-          </div>
-        </div>
->>>>>>> 7ed69616ee0448e79505f34f604cbcd4cfb66c8b
-      </div>
-  
-      <h1>ESTILO URBANO COM IDENTIDADE</h1>
-  
-      <p>
-          A Soul Street é um projeto inspirado na cultura de rua,
-          misturando moda, atitude e criatividade.<br>
-          Aqui você pode conhecer produtos, colaboradores e formas
-          de contato de maneira moderna e organizada.
-      </p>
-  
-      <div class="hero-buttons">
-          <a href="produtos.html" class="btn btn-primary">
-              VER PRODUTOS
-          </a>
-  
-          <a href="contato.html" class="btn btn-secondary">
-              FALE CONOSCO
-          </a>
-      </div>
-  
-  </section>
-
-    <!-- Seção de Produtos com Carregamento Dinâmico -->
-    <section class="modules" id="produtos">
-      <div class="section-head">
-      </section>
-
-      <!-- Container onde o JavaScript injetará os produtos -->
-      <div class="dashboard-products" id="product-container"></div>
-
-      <!-- Container do Botão Ver Mais -->
-      <div class="load-more-container">
-        <button id="btn-load-more" class="btn btn-secondary">Ver Mais</button>
-      </div>
-    </section>
-
-    <!-- Seção dos Painéis de Atalho Originais -->
-    <section class="modules" id="secoes">
-      <div class="section-head">
-        <h2>Seções do Projeto</h2>
-        <p>
-          Essa homepage foi organizada para servir como entrada principal do seu projeto
-          escolar, com áreas que podem levar para páginas de produtos, colaboradores,
-          login e contato.
-        </p>
-      </div>
-
-      <div class="dashboard">
-        <a href="produtos.html" >
-          <article class="panel">
-            <h3>Produtos</h3>
-            <p>Veja os itens da coleção Soul Street com estilo urbano e visual moderno.</p>
-          </article>
-        </a>
-
-        <a href="colaboradores.html" >
-          <article class="panel">
-            <h3>Colaboradores</h3>
-            <p>Conheça as pessoas que ajudam a construir o projeto e a identidade da marca.</p>
-          </article>
-        </a>
-
-        <a href="login.html" >
-          <article class="panel">
-              <h3>Login</h3>
-              <p>Entre na sua conta ou crie um novo cadastro na Soul Street.</p>
-          </article>
-      </a>
-      </div>
-    </section>
-
-    <!-- Seção de Contatos Rápidos -->
-    <section class="modules" id="contato">
-      <div class="section-head">
-        <h2>Contato</h2>
-        <p>
-          Você pode usar essa área para colocar telefone, e-mail, redes sociais ou
-          qualquer informação de contato do projeto.
-        </p>
-      </div>
-
-      <div class="dashboard">
-        <a href="contato.html" >
-          <article class="panel">
-            <h3>E-mail</h3>
-            <p>contato@soulstreet.com</p>
-          </article>
-        </a>
-
-        <article class="panel">
-          <h3>Telefone</h3>
-          <p>(11)987105104</p>
-        </article>
-
-        <a href="contato.html" >
-          <article class="panel">
-            <h3>Redes sociais</h3>
-            <p>@soulstreet.oficial</p>
-          </article>
-        </a>
-      </div>
-    </section>
-  </main>
-  <!-- LÓGICA DO SCRIPT DE PRODUTOS -->
-  <script>
-    // Lista de produtos exemplo
-    const listaProdutos = [
-      { id: 1, nome: "Camiseta Soul Cyber", desc: "Algodão premium com estampa refletiva de alta durabilidade.", preco: "R$ 119,90" },
-      { id: 2, nome: "Shape Marfim 8.0", desc: "Shape de alta performance com 7 lâminas selecionadas.", preco: "R$ 249,00" },
-      { id: 3, nome: "Moletom Oversized", desc: "Corte moderno europeu com capuz ajustável e bolso canguru.", preco: "R$ 289,90" },
-      { id: 4, nome: "Glow Spray Can Art", desc: "Lata decorativa customizada à mão por grafiteiros locais.", preco: "R$ 85,00" },
-      { id: 5, nome: "Shoulder Bag Tech", desc: "Material impermeável com divisórias e alça regulável.", preco: "R$ 140,00" },
-      { id: 6, nome: "Gorro Knit Street", desc: "Touca de malha pesada com etiqueta frontal emborrachada.", preco: "R$ 69,90" }
-    ];
-
-    let itensCarregados = 0;
-    const quantidadePorDrop = 3; // Exibe de 3 em 3 produtos
-
-    const containerProdutos = document.getElementById('product-container');
-    const botaoVerMais = document.getElementById('btn-load-more');
-
-    function carregarProdutos() {
-      // Recorta os próximos produtos da nossa lista
-      const proximosItens = listaProdutos.slice(itensCarregados, itensCarregados + quantidadePorDrop);
-      
-      proximosItens.forEach(produto => {
-        const itemArtigo = document.createElement('article');
-        itemArtigo.className = 'panel';
-        
-        itemArtigo.innerHTML = `
-          <h3>${produto.nome}</h3>
-          <p style="margin-bottom: 20px; font-size: 0.9rem; color: #b5b5b5;">${produto.desc}</p>
-          <strong style="color: #00d1b2; font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; display: block;">${produto.preco}</strong>
-        `;
-        
-        containerProdutos.appendChild(itemArtigo);
-      });
-
-      itensCarregados += proximosItens.length;
-
-      // Oculta o botão se não houver mais produtos para exibir
-      if (itensCarregados >= listaProdutos.length) {
-        botaoVerMais.style.display = 'none';
-      }
-    }
-
-    // Inicializa carregando a primeira leva de itens
-    document.addEventListener('DOMContentLoaded', carregarProdutos);
