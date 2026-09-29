@@ -88,14 +88,10 @@ header {
     line-height: 1;
 
     color: #ffffff;
-<<<<<<< HEAD
-}
-=======
-
-    line-height: 1;
+ 
 }
 
->>>>>>> eeba5f24771406f719379ba6bdb451cc4351b8a0
+
 
 .logo p {
     margin: 5px 0 0;
@@ -865,38 +861,7 @@ nav a:hover {
         max-width: calc(100% - 30px);
     }
 
-<<<<<<< HEAD
-}
 
-
-/* =========================================================
-   CELULARES MUITO PEQUENOS
-========================================================= */
-
-@media (max-width: 400px) {
-
-    nav ul {
-        gap: 10px 14px;
-    }
-
-    nav a {
-        font-size: 0.78rem;
-    }
-
-    .hero h1 {
-        font-size: 2.8rem;
-    }
-
-    .hero p {
-        font-size: 0.9rem;
-    }
-
-    .panel h3 {
-        font-size: 1.7rem;
-    }
-
-}
-=======
 }
 
 
@@ -928,4 +893,62 @@ nav a:hover {
 
 }
 
->>>>>>> eeba5f24771406f719379ba6bdb451cc4351b8a0
+
+
+
+/* =========================================================
+   CELULARES MUITO PEQUENOS
+========================================================= */
+
+@media (max-width: 400px) {
+
+    nav ul {
+        gap: 10px 14px;
+    }
+
+    nav a {
+        font-size: 0.78rem;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .panel h3 {
+        font-size: 1.7rem;
+    }
+
+}
+
+
+
+body {
+    margin: 0;
+    position: relative;
+  }
+  
+  .background-layer {
+    position: fixed;
+    inset: 0;
+    background-image: url('segunda-imagem.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+  
+  .content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .background-layer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+  }
+  
