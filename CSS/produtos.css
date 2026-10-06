@@ -1,34 +1,61 @@
+/* ================================
+   ÁREA DE PRODUTOS
+================================ */
+
 #areaProdutos {
     display: none;
     margin-top: 60px;
-    padding-bottom: 80px;
+    padding: 40px 60px 80px;
+    background: #050505;
+    color: #fff;
 }
+
+body{
+    background: #000;
+    color: #ffffff;
+}
+
+/* Título da página */
 
 .titulo-produtos {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #242424;
+    padding-bottom: 20px;
 }
 
 .titulo-produtos h2 {
-    font-size: 40px;
-    color: #00d1b2;
+    margin: 0;
+    color: #fff;
+    font-size: 42px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
 }
 
 .titulo-produtos button {
-    padding: 10px 20px;
-    border: 1px solid #444;
+    padding: 13px 24px;
+    border: 1px solid #ff5722;
     background: transparent;
-    color: white;
-    border-radius: 7px;
+    color: #ff5722;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .titulo-produtos button:hover {
-    border-color: #00d1b2;
-    color: #00d1b2;
+    background: #ff5722;
+    color: #000;
 }
+
+
+/* ================================
+   LISTA DE PRODUTOS
+================================ */
 
 .lista-produtos {
     display: grid;
@@ -36,37 +63,68 @@
     gap: 25px;
 }
 
+
+/* ================================
+   CARD DO PRODUTO
+================================ */
+
 .produto {
-    background: #121212;
-    border: 1px solid #292929;
-    border-radius: 10px;
+    background: #101010;
+    border: 1px solid #242424;
+    border-radius: 4px;
     overflow: hidden;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .produto:hover {
-    transform: translateY(-5px);
-    border-color: #00d1b2;
+    transform: translateY(-6px);
+    border-color: #ff5722;
+    box-shadow: 0 10px 30px rgba(255, 87, 34, 0.12);
 }
 
+
+/* ================================
+   IMAGEM
+================================ */
+
 .produto-imagem {
-    height: 220px;
-    background: #1c1c1c;
+    height: 280px;
+    background: #171717;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
+    overflow: hidden;
     font-size: 70px;
 }
+
+.produto-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s ease;
+}
+
+.produto:hover .produto-imagem img {
+    transform: scale(1.05);
+}
+
+
+/* ================================
+   INFORMAÇÕES
+================================ */
 
 .produto-info {
     padding: 25px;
 }
 
 .produto-info h3 {
+    margin: 0 0 10px;
+    color: #fff;
     font-size: 22px;
-    margin-bottom: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
 }
 
 .produto-info p {
@@ -77,25 +135,72 @@
 
 .produto-info strong {
     display: block;
-    color: #00d1b2;
+    color: #ff5722;
     font-size: 25px;
     margin-bottom: 20px;
 }
 
+
+/* ================================
+   BOTÃO
+================================ */
+
 .produto-info button {
     width: 100%;
-    padding: 13px;
+    padding: 14px;
 
     border: none;
-    border-radius: 7px;
+    border-radius: 3px;
 
-    background: #00d1b2;
+    background: #ff5722;
     color: #000;
 
-    font-weight: bold;
+    font-size: 15px;
+    font-weight: 900;
+    text-transform: uppercase;
+
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .produto-info button:hover {
-    background: #00a990;
+    background: #fff;
+    color: #000;
+}
+
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+
+@media (max-width: 900px) {
+
+    .lista-produtos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #areaProdutos {
+        padding: 40px 30px 60px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .lista-produtos {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo-produtos {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .titulo-produtos h2 {
+        font-size: 32px;
+    }
+
+    #areaProdutos {
+        padding: 30px 20px 50px;
+    }
 }
