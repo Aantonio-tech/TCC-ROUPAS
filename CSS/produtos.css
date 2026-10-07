@@ -1,41 +1,41 @@
-/* ================================
+ /* ================================
    ÁREA DE PRODUTOS
-================================ */
+ ================================ */
 
-#areaProdutos {
+body{
+    background: #000;
+    color: #ffffff;
+
+
+ #areaProdutos {
     display: none;
     margin-top: 60px;
     padding: 40px 60px 80px;
     background: #050505;
     color: #fff;
-}
+ }
 
-body{
-    background: #000;
-    color: #ffffff;
-}
+ /* Título da página */
 
-/* Título da página */
-
-.titulo-produtos {
+ .titulo-produtos {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 40px;
     border-bottom: 1px solid #242424;
     padding-bottom: 20px;
-}
+ }
 
-.titulo-produtos h2 {
+ .titulo-produtos h2 {
     margin: 0;
     color: #fff;
     font-size: 42px;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -1px;
-}
+ }
 
-.titulo-produtos button {
+ .titulo-produtos button {
     padding: 13px 24px;
     border: 1px solid #ff5722;
     background: transparent;
@@ -45,49 +45,49 @@ body{
     text-transform: uppercase;
     cursor: pointer;
     transition: 0.3s;
-}
+ }
 
-.titulo-produtos button:hover {
+ .titulo-produtos button:hover {
     background: #ff5722;
     color: #000;
-}
+ }
 
 
-/* ================================
-   LISTA DE PRODUTOS
-================================ */
+ /* ================================
+    LISTA DE PRODUTOS
+ ================================ */
 
-.lista-produtos {
+ .lista-produtos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
-}
+ }
 
 
-/* ================================
+ /* ================================
    CARD DO PRODUTO
-================================ */
+ ================================ */
 
-.produto {
+ .produto {
     background: #101010;
     border: 1px solid #242424;
     border-radius: 4px;
     overflow: hidden;
     transition: 0.3s ease;
-}
+ }
 
-.produto:hover {
+ .produto:hover {
     transform: translateY(-6px);
     border-color: #ff5722;
     box-shadow: 0 10px 30px rgba(255, 87, 34, 0.12);
-}
+ }
 
 
-/* ================================
+ /* ================================
    IMAGEM
-================================ */
+ ================================ */
 
-.produto-imagem {
+ .produto-imagem {
     height: 280px;
     background: #171717;
 
@@ -97,55 +97,55 @@ body{
 
     overflow: hidden;
     font-size: 70px;
-}
+ }
 
-.produto-imagem img {
+ .produto-imagem img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: 0.4s ease;
-}
+ }
 
-.produto:hover .produto-imagem img {
+ .produto:hover .produto-imagem img {
     transform: scale(1.05);
-}
+ }
 
 
-/* ================================
+ /* ================================
    INFORMAÇÕES
-================================ */
+ ================================ */
 
-.produto-info {
+ .produto-info {
     padding: 25px;
-}
+ }
 
-.produto-info h3 {
+ .produto-info h3 {
     margin: 0 0 10px;
     color: #fff;
     font-size: 22px;
     font-weight: 800;
     text-transform: uppercase;
-}
+ }
 
-.produto-info p {
+ .produto-info p {
     color: #aaa;
     line-height: 1.5;
     margin-bottom: 20px;
-}
+ }
 
-.produto-info strong {
+ .produto-info strong {
     display: block;
     color: #ff5722;
     font-size: 25px;
     margin-bottom: 20px;
-}
+ }
 
 
-/* ================================
+ /* ================================
    BOTÃO
-================================ */
+ ================================ */
 
-.produto-info button {
+ .produto-info button {
     width: 100%;
     padding: 14px;
 
@@ -161,19 +161,19 @@ body{
 
     cursor: pointer;
     transition: 0.3s;
-}
+ }
 
-.produto-info button:hover {
+ .produto-info button:hover {
     background: #fff;
     color: #000;
-}
+ }
 
 
-/* ================================
+ /* ================================
    RESPONSIVIDADE
-================================ */
+ ================================ */
 
-@media (max-width: 900px) {
+ @media (max-width: 900px) {
 
     .lista-produtos {
         grid-template-columns: repeat(2, 1fr);
@@ -182,9 +182,9 @@ body{
     #areaProdutos {
         padding: 40px 30px 60px;
     }
-}
+ }
 
-@media (max-width: 600px) {
+ @media (max-width: 600px) {
 
     .lista-produtos {
         grid-template-columns: 1fr;
@@ -203,4 +203,5 @@ body{
     #areaProdutos {
         padding: 30px 20px 50px;
     }
+ }
 }
