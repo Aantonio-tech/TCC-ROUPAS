@@ -1,6 +1,5 @@
- /* ================================
-   CONFIGURAÇÕES GERAIS
-================================ */
+
+/* CONFIGURAÇÕES GERAIS */
 
 * {
     margin: 0;
@@ -15,21 +14,16 @@ body {
     min-height: 100vh;
 }
 
-/* ================================
-   CONTAINER
-================================ */
+/* CONTAINER */
 
 .container {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1500px;
     margin: 0 auto;
-    padding: 80px 60px;
+    padding: 80px 40px;
 }
 
-
-/* ================================
-   CABEÇALHO
-================================ */
+/* CABEÇALHO */
 
 .section-head {
     margin-bottom: 50px;
@@ -42,109 +36,116 @@ body {
     font-size: 56px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #fff;
     margin-bottom: 10px;
 }
 
 .section-head p {
     color: #aaa;
     font-size: 17px;
+    line-height: 1.7;
 }
 
-
-/* ================================
-   CATEGORIAS
-================================ */
+/* GRADE DE CATEGORIAS */
 
 .categorias {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 25px;
+    width: 100%;
 }
 
+/* CARTÕES */
 
-/* ================================
-   CARD DA CATEGORIA
-================================ */
-
-.categoria {
-    min-height: 260px;
-
-    background: #101010;
-
-    border: 1px solid #242424;
-    border-radius: 5px;
-
+.categoria-card {
+    min-width: 0;
+    min-height: 300px;
     padding: 35px;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    align-items: flex-start;
 
-    cursor: pointer;
+    background: #101010;
+    border: 1px solid #292929;
+    border-radius: 12px;
 
-    transition: 0.3s ease;
+    color: #fff;
+    text-decoration: none;
+
+    transition: transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
 }
 
-.categoria:hover {
-    transform: translateY(-7px);
-
+.categoria-card:hover {
+    transform: translateY(-6px);
     border-color: #ff5722;
 
-    box-shadow:
-        0 15px 40px rgba(255, 87, 34, 0.15);
+    box-shadow: 0 15px 40px rgba(255, 87, 34, 0.13);
 }
 
+/* IDENTIFICAÇÃO DA CATEGORIA */
 
-/* ================================
-   TÍTULO DA CATEGORIA
-================================ */
+.categoria-tag {
+    color: #ff5722;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
 
-.categoria h2 {
+/* TÍTULO */
+
+.categoria-card h2 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 38px;
-    color: #fff;
-
-    text-transform: uppercase;
-    margin-bottom: 15px;
-
+    font-size: 42px;
     letter-spacing: 1px;
+    margin-bottom: 15px;
 }
 
+/* DESCRIÇÃO */
 
-/* ================================
-   DESCRIÇÃO
-================================ */
-
-.categoria p {
+.categoria-card p {
     color: #aaa;
-
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 28px;
 }
 
+/* LINK VISUAL */
 
-/* ================================
-   RESPONSIVIDADE
-================================ */
+.categoria-link {
+    color: #ff5722;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.categoria-card:hover .categoria-link {
+    color: #fff;
+}
+
+/* RESPONSIVIDADE */
 
 @media (max-width: 900px) {
-
     .container {
-        padding: 60px 30px;
+        padding: 60px 25px;
     }
 
     .categorias {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .categoria-card {
+        padding: 28px;
+    }
 }
 
-
 @media (max-width: 600px) {
-
     .container {
-        padding: 40px 20px;
+        padding: 40px 18px;
     }
 
     .section-head h1 {
@@ -155,4 +156,7 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .categoria-card {
+        min-height: 260px;
+    }
 }

@@ -1,5 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +9,11 @@
     <title>Soul Street | Camisas</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -58,7 +62,7 @@
         }
 
         main {
-            max-width: 1300px;
+            max-width: 1500px;
             margin: auto;
             padding: 65px 30px;
         }
@@ -90,6 +94,7 @@
             border-radius: 10px;
             overflow: hidden;
             transition: 0.3s;
+            min-width: 0;
         }
 
         .produto:hover {
@@ -99,14 +104,14 @@
 
         .produto img {
             width: 100%;
-            height: 340px;
+            height: 360px;
             object-fit: cover;
             display: block;
             background: #181818;
         }
 
         .info {
-            padding: 22px;
+            padding: 26px;
         }
 
         .categoria {
@@ -118,38 +123,42 @@
 
         .info h2 {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 27px;
-            margin: 10px 0;
+            font-size: 29px;
+            margin: 12px 0;
         }
 
         .descricao {
             color: #aaa;
-            font-size: 14px;
-            line-height: 1.6;
-            min-height: 45px;
+            font-size: 15px;
+            line-height: 1.7;
+            min-height: 52px;
         }
 
         .preco {
-            font-size: 20px;
+            font-size: 25px;
             font-weight: 700;
-            margin: 20px 0;
+            margin: 22px 0;
         }
 
-        .botao {
+        .btn-comprar {
             display: block;
             width: 100%;
-            text-align: center;
-            padding: 13px;
+            padding: 17px;
             background: #ff5a1f;
             color: white;
-            text-decoration: none;
+            border: none;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
             font-weight: 700;
-            border-radius: 5px;
+            border-radius: 7px;
+            cursor: pointer;
             transition: 0.3s;
         }
 
-        .botao:hover {
+        .btn-comprar:hover {
             background: #e6460d;
+            transform: translateY(-2px);
         }
 
         footer {
@@ -159,13 +168,76 @@
             border-top: 1px solid #252525;
         }
 
-        @media (max-width: 850px) {
+        /* JANELA DE COMPRA */
+
+        .modal-compra {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .conteudo-compra {
+            width: 100%;
+            max-width: 450px;
+            padding: 30px;
+            background: #111;
+            border: 1px solid #ff5a1f;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .conteudo-compra h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .conteudo-compra h2 span {
+            color: #ff5a1f;
+        }
+
+        .conteudo-compra h3 {
+            margin-bottom: 20px;
+        }
+
+        .conteudo-compra p {
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+
+        .conteudo-compra .btn-modal {
+            width: 100%;
+            padding: 14px;
+            margin-top: 12px;
+            border: none;
+            border-radius: 7px;
+            background: #ff5a1f;
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .conteudo-compra .btn-cancelar {
+            background: #292929;
+        }
+
+        .conteudo-compra button:hover {
+            opacity: 0.85;
+        }
+
+        @media (max-width: 900px) {
             .produtos {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
 
-        @media (max-width: 550px) {
+        @media (max-width: 600px) {
             header {
                 padding: 18px;
             }
@@ -181,6 +253,10 @@
             .produto img {
                 height: 360px;
             }
+
+            .info {
+                padding: 22px;
+            }
         }
     </style>
 </head>
@@ -192,7 +268,7 @@
             SOUL <span>STREET</span>
         </a>
 
-        <a href="index.html#produtos" class="voltar">
+        <a href="produtos.html" class="voltar">
             ← Voltar
         </a>
     </header>
@@ -205,6 +281,7 @@
 
         <section class="produtos">
 
+            <!-- PRODUTO 1 -->
             <article class="produto">
                 <img
                     src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=85"
@@ -215,56 +292,152 @@
                 <div class="info">
                     <span class="categoria">Essenciais</span>
                     <h2>Camiseta Oversized</h2>
+
                     <p class="descricao">
                         Modelagem ampla e visual minimalista para o dia a dia.
                     </p>
+
                     <p class="preco">R$ 119,90</p>
-                    <a href="contato.html" class="botao">TENHO INTERESSE</a>
+
+                    <button class="btn-comprar"
+                        onclick="abrirCompra('Camiseta Oversized', 119.90)">
+                        COMPRAR
+                    </button>
                 </div>
             </article>
 
+            <!-- PRODUTO 2 -->
             <article class="produto">
                 <img
                     src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=800&q=85"
-                    alt="Camiseta com estilo urbano"
+                    alt="Camiseta urbana preta"
                     loading="lazy"
                 >
 
                 <div class="info">
                     <span class="categoria">Urban Style</span>
                     <h2>Camiseta Urban</h2>
+
                     <p class="descricao">
                         Estilo urbano com uma combinação moderna e versátil.
                     </p>
+
                     <p class="preco">R$ 139,90</p>
-                    <a href="contato.html" class="botao">TENHO INTERESSE</a>
+
+                    <button class="btn-comprar"
+                        onclick="abrirCompra('Camiseta Urban', 139.90)">
+                        COMPRAR
+                    </button>
                 </div>
             </article>
 
+            <!-- PRODUTO 3 -->
             <article class="produto">
                 <img
                     src="https://images.unsplash.com/photo-1527719327859-c6ce80353573?auto=format&fit=crop&w=800&q=85"
-                    alt="Camiseta preta de estilo casual"
+                    alt="Camiseta streetwear estampada"
                     loading="lazy"
                 >
 
                 <div class="info">
                     <span class="categoria">Street Premium</span>
                     <h2>Camiseta Street</h2>
+
                     <p class="descricao">
                         Uma peça versátil para compor diferentes looks urbanos.
                     </p>
+
                     <p class="preco">R$ 149,90</p>
-                    <a href="contato.html" class="botao">TENHO INTERESSE</a>
+
+                    <button class="btn-comprar"
+                        onclick="abrirCompra('Camiseta Street', 149.90)">
+                        COMPRAR
+                    </button>
                 </div>
             </article>
 
         </section>
     </main>
 
+    <!-- JANELA PARA CONCLUIR A COMPRA -->
+
+    <div class="modal-compra" id="modalCompra">
+        <div class="conteudo-compra">
+
+            <h2>SOUL <span>STREET</span></h2>
+            <h3>Concluir compra</h3>
+
+            <p id="nomeProduto"></p>
+            <p>Valor: <strong id="precoProduto"></strong></p>
+
+            <p>Deseja continuar com a compra?</p>
+
+            <button class="btn-modal" onclick="concluirCompra()">
+                CONFIRMAR COMPRA
+            </button>
+
+            <button class="btn-modal btn-cancelar" onclick="fecharCompra()">
+                VOLTAR
+            </button>
+
+        </div>
+    </div>
+
     <footer>
         © 2026 Soul Street — Alma da Rua.
     </footer>
+
+    <script>
+        let produtoSelecionado = "";
+        let precoSelecionado = 0;
+
+        function abrirCompra(nome, preco) {
+            produtoSelecionado = nome;
+            precoSelecionado = preco;
+
+            document.getElementById("nomeProduto").textContent =
+                "Produto: " + nome;
+
+            document.getElementById("precoProduto").textContent =
+                preco.toLocaleString("pt-BR", {
+                    style: "currency",
+                    currency: "BRL"
+                });
+
+            document.getElementById("modalCompra").style.display = "flex";
+        }
+
+        function fecharCompra() {
+            document.getElementById("modalCompra").style.display = "none";
+        }
+
+        function concluirCompra() {
+            alert(
+                "Compra iniciada!\n\n" +
+                "Produto: " + produtoSelecionado + "\n" +
+                "Valor: " +
+                precoSelecionado.toLocaleString("pt-BR", {
+                    style: "currency",
+                    currency: "BRL"
+                }) +
+                "\n\nEsta é uma demonstração. O pagamento ainda não foi realizado."
+            );
+
+            fecharCompra();
+        }
+
+        document.getElementById("modalCompra").addEventListener("click", function(event) {
+            if (event.target === this) {
+                fecharCompra();
+            }
+        });
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                fecharCompra();
+            }
+        });
+    </script>
 
 </body>
 </html>
