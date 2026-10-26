@@ -1,443 +1,202 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soul Street | Camisas</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <title>Soul Street | Camisas</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: #080808;
-            color: white;
-            font-family: 'Inter', sans-serif;
-        }
-
-        header {
-            padding: 22px 6%;
-            border-bottom: 1px solid #252525;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .logo {
-            color: white;
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 32px;
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: #ff5a1f;
-        }
-
-        .voltar {
-            color: white;
-            text-decoration: none;
-            border: 1px solid #444;
-            padding: 10px 18px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        .voltar:hover {
-            border-color: #ff5a1f;
-            color: #ff5a1f;
-        }
-
-        main {
-            max-width: 1500px;
-            margin: auto;
-            padding: 65px 30px;
-        }
-
-        .titulo {
-            margin-bottom: 40px;
-        }
-
-        .titulo h1 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(42px, 6vw, 68px);
-            margin-bottom: 10px;
-        }
-
-        .titulo p {
-            color: #aaa;
-            line-height: 1.7;
-        }
-
-        .produtos {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 25px;
-        }
-
-        .produto {
-            background: #111;
-            border: 1px solid #252525;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: 0.3s;
-            min-width: 0;
-        }
-
-        .produto:hover {
-            transform: translateY(-6px);
-            border-color: #ff5a1f;
-        }
-
-        .produto img {
-            width: 100%;
-            height: 360px;
-            object-fit: cover;
-            display: block;
-            background: #181818;
-        }
-
-        .info {
-            padding: 26px;
-        }
-
-        .categoria {
-            color: #ff5a1f;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .info h2 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 29px;
-            margin: 12px 0;
-        }
-
-        .descricao {
-            color: #aaa;
-            font-size: 15px;
-            line-height: 1.7;
-            min-height: 52px;
-        }
-
-        .preco {
-            font-size: 25px;
-            font-weight: 700;
-            margin: 22px 0;
-        }
-
-        .btn-comprar {
-            display: block;
-            width: 100%;
-            padding: 17px;
-            background: #ff5a1f;
-            color: white;
-            border: none;
-            text-align: center;
-            font-family: 'Inter', sans-serif;
-            font-size: 18px;
-            font-weight: 700;
-            border-radius: 7px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .btn-comprar:hover {
-            background: #e6460d;
-            transform: translateY(-2px);
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            color: #777;
-            border-top: 1px solid #252525;
-        }
-
-        /* JANELA DE COMPRA */
-
-        .modal-compra {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 9999;
-            background: rgba(0, 0, 0, 0.85);
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .conteudo-compra {
-            width: 100%;
-            max-width: 450px;
-            padding: 30px;
-            background: #111;
-            border: 1px solid #ff5a1f;
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .conteudo-compra h2 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-
-        .conteudo-compra h2 span {
-            color: #ff5a1f;
-        }
-
-        .conteudo-compra h3 {
-            margin-bottom: 20px;
-        }
-
-        .conteudo-compra p {
-            margin: 15px 0;
-            line-height: 1.6;
-        }
-
-        .conteudo-compra .btn-modal {
-            width: 100%;
-            padding: 14px;
-            margin-top: 12px;
-            border: none;
-            border-radius: 7px;
-            background: #ff5a1f;
-            color: white;
-            font-size: 15px;
-            font-weight: 700;
-            cursor: pointer;
-        }
-
-        .conteudo-compra .btn-cancelar {
-            background: #292929;
-        }
-
-        .conteudo-compra button:hover {
-            opacity: 0.85;
-        }
-
-        @media (max-width: 900px) {
-            .produtos {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-
-        @media (max-width: 600px) {
-            header {
-                padding: 18px;
-            }
-
-            main {
-                padding: 40px 18px;
-            }
-
-            .produtos {
-                grid-template-columns: 1fr;
-            }
-
-            .produto img {
-                height: 360px;
-            }
-
-            .info {
-                padding: 22px;
-            }
-        }
-    </style>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#080808;color:white;font-family:Inter,sans-serif}
+header{padding:22px 6%;border-bottom:1px solid #252525;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.logo{color:white;font:32px 'Bebas Neue',sans-serif;text-decoration:none}
+.logo span{color:#ff5a1f}
+.voltar,.btn-carrinho{color:white;text-decoration:none;border:1px solid #444;padding:11px 16px;border-radius:5px;background:transparent;cursor:pointer}
+.voltar:hover,.btn-carrinho:hover{border-color:#ff5a1f;color:#ff5a1f}
+main{max-width:1500px;margin:auto;padding:55px 30px}
+.titulo{margin-bottom:35px}
+.titulo h1{font:clamp(42px,6vw,68px) 'Bebas Neue',sans-serif;margin-bottom:10px}
+.titulo p{color:#aaa;line-height:1.7}
+.produtos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}
+.produto{background:#111;border:1px solid #252525;border-radius:10px;overflow:hidden;transition:.3s;min-width:0}
+.produto:hover{transform:translateY(-4px);border-color:#ff5a1f}
+.produto img{width:100%;height:320px;object-fit:cover;display:block;background:#181818}
+.info{padding:25px}
+.categoria{color:#ff5a1f;font-size:12px;text-transform:uppercase;letter-spacing:2px}
+.info h2{font:29px 'Bebas Neue',sans-serif;margin:12px 0}
+.descricao{color:#aaa;font-size:15px;line-height:1.7;min-height:52px}
+.preco{font-size:25px;font-weight:700;margin:22px 0}
+.btn-comprar{width:100%;padding:16px;background:#ff5a1f;color:white;border:none;border-radius:7px;font-size:17px;font-weight:700;cursor:pointer;margin-top:8px}
+.btn-comprar:hover{background:#e6460d}
+#carrinho{display:none;margin-top:35px;padding:25px;background:#111;border:1px solid #ff5a1f;border-radius:10px}
+#carrinho h2{font:32px 'Bebas Neue',sans-serif;margin-bottom:20px}
+.item{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:15px 0;border-bottom:1px solid #333;flex-wrap:wrap}
+.item p{color:#aaa;margin-top:5px}
+.btn-remover,.btn-secundario{padding:10px 14px;border:1px solid #555;border-radius:5px;background:transparent;color:white;cursor:pointer}
+.btn-remover:hover,.btn-secundario:hover{border-color:#ff5a1f;color:#ff5a1f}
+.total{font-size:23px;font-weight:700;margin:22px 0}
+.acoes{display:flex;gap:10px;flex-wrap:wrap}
+.vazio{color:#aaa}
+footer{text-align:center;padding:25px;color:#777;border-top:1px solid #252525}
+@media(max-width:900px){.produtos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){main{padding:35px 18px}.produtos{grid-template-columns:1fr}.info{padding:22px}.produto img{height:300px}}
+</style>
 </head>
 
 <body>
+<header>
+<a href="index.html" class="logo">SOUL <span>STREET</span></a>
+<div class="acoes">
+<button class="btn-carrinho" onclick="alternarCarrinho()">🛒 Carrinho (<span id="quantidade">0</span>)</button>
+<a href="produtos.html" class="voltar">← Voltar</a>
+</div>
+</header>
 
-    <header>
-        <a href="index.html" class="logo">
-            SOUL <span>STREET</span>
-        </a>
+<main>
+<section class="titulo">
+<h1>CAMISAS STREETWEAR</h1>
+<p>Vista sua identidade. Confira nossa coleção de camisetas urbanas.</p>
+</section>
 
-        <a href="produtos.html" class="voltar">
-            ← Voltar
-        </a>
-    </header>
+<section class="produtos">
+<article class="produto">
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=85" alt="Camiseta branca">
+<div class="info">
+<span class="categoria">Essenciais</span>
+<h2>Camiseta Oversized</h2>
+<p class="descricao">Modelagem ampla e visual minimalista para o dia a dia.</p>
+<p class="preco">R$ 119,90</p>
+<button class="btn-comprar" onclick="adicionarAoCarrinho('Camiseta Oversized',119.90)">COMPRAR</button>
+</div>
+</article>
 
-    <main>
-        <section class="titulo">
-            <h1>CAMISAS STREETWEAR</h1>
-            <p>Vista sua identidade. Confira nossa coleção de camisetas urbanas.</p>
-        </section>
+<article class="produto">
+<img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=800&q=85" alt="Camiseta urbana">
+<div class="info">
+<span class="categoria">Urban Style</span>
+<h2>Camiseta Urban</h2>
+<p class="descricao">Estilo urbano com uma combinação moderna e versátil.</p>
+<p class="preco">R$ 139,90</p>
+<button class="btn-comprar" onclick="adicionarAoCarrinho('Camiseta Urban',139.90)">COMPRAR</button>
+</div>
+</article>
 
-        <section class="produtos">
+<article class="produto">
+<img src="https://images.unsplash.com/photo-1527719327859-c6ce80353573?auto=format&fit=crop&w=800&q=85" alt="Camiseta streetwear">
+<div class="info">
+<span class="categoria">Street Premium</span>
+<h2>Camiseta Street</h2>
+<p class="descricao">Uma peça versátil para compor diferentes looks urbanos.</p>
+<p class="preco">R$ 149,90</p>
+<button class="btn-comprar" onclick="adicionarAoCarrinho('Camiseta Street',149.90)">COMPRAR</button>
+</div>
+</article>
+</section>
 
-            <!-- PRODUTO 1 -->
-            <article class="produto">
-                <img
-                    src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=85"
-                    alt="Camiseta streetwear branca"
-                    loading="lazy"
-                >
+<section id="carrinho">
+<h2>MEU CARRINHO</h2>
+<div id="itens-carrinho"></div>
+<p class="total">Total: <span id="total">R$ 0,00</span></p>
+<div class="acoes">
+<button class="btn-secundario" onclick="limparCarrinho()">Limpar carrinho</button>
+<button class="btn-secundario" onclick="alternarCarrinho()">Continuar comprando</button>
+<button class="btn-comprar" style="width:auto;margin:0" onclick="irParaCheckout()">FINALIZAR COMPRA</button>
+</div>
+</section>
+</main>
 
-                <div class="info">
-                    <span class="categoria">Essenciais</span>
-                    <h2>Camiseta Oversized</h2>
+<footer>© 2026 Soul Street — Alma da Rua.</footer>
 
-                    <p class="descricao">
-                        Modelagem ampla e visual minimalista para o dia a dia.
-                    </p>
+<script>
+let carrinho=[];
 
-                    <p class="preco">R$ 119,90</p>
+try{
+carrinho=JSON.parse(sessionStorage.getItem('soulStreetCarrinho'))||[];
+if(!Array.isArray(carrinho))carrinho=[];
+}catch(e){carrinho=[];}
 
-                    <button class="btn-comprar"
-                        onclick="abrirCompra('Camiseta Oversized', 119.90)">
-                        COMPRAR
-                    </button>
-                </div>
-            </article>
+function salvarCarrinho(){
+sessionStorage.setItem('soulStreetCarrinho',JSON.stringify(carrinho));
+}
 
-            <!-- PRODUTO 2 -->
-            <article class="produto">
-                <img
-                    src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=800&q=85"
-                    alt="Camiseta urbana preta"
-                    loading="lazy"
-                >
+function dinheiro(valor){
+return valor.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+}
 
-                <div class="info">
-                    <span class="categoria">Urban Style</span>
-                    <h2>Camiseta Urban</h2>
+function adicionarAoCarrinho(nome,preco){
+carrinho.push({nome,preco});
+salvarCarrinho();
+atualizarCarrinho();
+document.getElementById('carrinho').style.display='block';
+document.getElementById('carrinho').scrollIntoView({behavior:'smooth'});
+}
 
-                    <p class="descricao">
-                        Estilo urbano com uma combinação moderna e versátil.
-                    </p>
+function atualizarCarrinho(){
+document.getElementById('quantidade').textContent=carrinho.length;
+const area=document.getElementById('itens-carrinho');
+area.innerHTML='';
 
-                    <p class="preco">R$ 139,90</p>
+if(carrinho.length===0){
+area.innerHTML='<p class="vazio">Seu carrinho está vazio.</p>';
+}
 
-                    <button class="btn-comprar"
-                        onclick="abrirCompra('Camiseta Urban', 139.90)">
-                        COMPRAR
-                    </button>
-                </div>
-            </article>
+carrinho.forEach((produto,indice)=>{
+const linha=document.createElement('div');
+linha.className='item';
 
-            <!-- PRODUTO 3 -->
-            <article class="produto">
-                <img
-                    src="https://images.unsplash.com/photo-1527719327859-c6ce80353573?auto=format&fit=crop&w=800&q=85"
-                    alt="Camiseta streetwear estampada"
-                    loading="lazy"
-                >
+const info=document.createElement('div');
+const nome=document.createElement('strong');
+nome.textContent=produto.nome;
 
-                <div class="info">
-                    <span class="categoria">Street Premium</span>
-                    <h2>Camiseta Street</h2>
+const preco=document.createElement('p');
+preco.textContent=dinheiro(Number(produto.preco));
 
-                    <p class="descricao">
-                        Uma peça versátil para compor diferentes looks urbanos.
-                    </p>
+info.append(nome,preco);
 
-                    <p class="preco">R$ 149,90</p>
+const remover=document.createElement('button');
+remover.className='btn-remover';
+remover.textContent='Remover';
+remover.onclick=()=>removerDoCarrinho(indice);
 
-                    <button class="btn-comprar"
-                        onclick="abrirCompra('Camiseta Street', 149.90)">
-                        COMPRAR
-                    </button>
-                </div>
-            </article>
+linha.append(info,remover);
+area.appendChild(linha);
+});
 
-        </section>
-    </main>
+const total=carrinho.reduce((soma,p)=>soma+Number(p.preco),0);
+document.getElementById('total').textContent=dinheiro(total);
+}
 
-    <!-- JANELA PARA CONCLUIR A COMPRA -->
+function removerDoCarrinho(indice){
+carrinho.splice(indice,1);
+salvarCarrinho();
+atualizarCarrinho();
+}
 
-    <div class="modal-compra" id="modalCompra">
-        <div class="conteudo-compra">
+function limparCarrinho(){
+carrinho=[];
+salvarCarrinho();
+atualizarCarrinho();
+}
 
-            <h2>SOUL <span>STREET</span></h2>
-            <h3>Concluir compra</h3>
+function alternarCarrinho(){
+const elemento=document.getElementById('carrinho');
+const aberto=elemento.style.display==='block';
+elemento.style.display=aberto?'none':'block';
+if(!aberto)elemento.scrollIntoView({behavior:'smooth'});
+}
 
-            <p id="nomeProduto"></p>
-            <p>Valor: <strong id="precoProduto"></strong></p>
+function irParaCheckout(){
+if(carrinho.length===0){
+alert('Adicione um produto ao carrinho primeiro!');
+return;
+}
+salvarCarrinho();
+window.location.href='checkout.html';
+}
 
-            <p>Deseja continuar com a compra?</p>
-
-            <button class="btn-modal" onclick="concluirCompra()">
-                CONFIRMAR COMPRA
-            </button>
-
-            <button class="btn-modal btn-cancelar" onclick="fecharCompra()">
-                VOLTAR
-            </button>
-
-        </div>
-    </div>
-
-    <footer>
-        © 2026 Soul Street — Alma da Rua.
-    </footer>
-
-    <script>
-        let produtoSelecionado = "";
-        let precoSelecionado = 0;
-
-        function abrirCompra(nome, preco) {
-            produtoSelecionado = nome;
-            precoSelecionado = preco;
-
-            document.getElementById("nomeProduto").textContent =
-                "Produto: " + nome;
-
-            document.getElementById("precoProduto").textContent =
-                preco.toLocaleString("pt-BR", {
-                    style: "currency",
-                    currency: "BRL"
-                });
-
-            document.getElementById("modalCompra").style.display = "flex";
-        }
-
-        function fecharCompra() {
-            document.getElementById("modalCompra").style.display = "none";
-        }
-
-        function concluirCompra() {
-            alert(
-                "Compra iniciada!\n\n" +
-                "Produto: " + produtoSelecionado + "\n" +
-                "Valor: " +
-                precoSelecionado.toLocaleString("pt-BR", {
-                    style: "currency",
-                    currency: "BRL"
-                }) +
-                "\n\nEsta é uma demonstração. O pagamento ainda não foi realizado."
-            );
-
-            fecharCompra();
-        }
-
-        document.getElementById("modalCompra").addEventListener("click", function(event) {
-            if (event.target === this) {
-                fecharCompra();
-            }
-        });
-
-        document.addEventListener("keydown", function(event) {
-            if (event.key === "Escape") {
-                fecharCompra();
-            }
-        });
-    </script>
-
+atualizarCarrinho();
+</script>
 </body>
 </html>

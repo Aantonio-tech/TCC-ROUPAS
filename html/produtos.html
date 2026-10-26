@@ -18,7 +18,9 @@
 </head>
 
 <body>
-
+    <button id="btn-carrinho" type="button" class="btn-carrinho">
+        🛒 Carrinho (<span id="contador-carrinho">0</span>)
+    </button>
     <main class="container">
 
         <section class="section-head">
@@ -80,5 +82,48 @@
 
     </main>
 
+<!-- CARRINHO SOUL STREET -->
+<div id="carrinho-container" class="carrinho-overlay" style="display:none;">
+    <div class="carrinho-box">
+        <div class="carrinho-header">
+            <h2>Seu carrinho 🛒</h2>
+            <button id="fechar-carrinho" type="button">✕</button>
+        </div>
+
+        <div id="lista-carrinho">
+            <p>Seu carrinho está vazio.</p>
+        </div>
+
+        <div class="carrinho-opcoes">
+            <label for="frete">Entrega:</label>
+            <select id="frete">
+                <option value="0">Retirada grátis — R$ 0,00</option>
+                <option value="10">Entrega econômica — R$ 10,00</option>
+                <option value="20">Entrega expressa — R$ 20,00</option>
+            </select>
+
+            <label for="cupom">Cupom de desconto:</label>
+            <div class="cupom-linha">
+                <input id="cupom" type="text" placeholder="Digite BEMVINDO10">
+                <button id="aplicar-cupom" type="button">Aplicar</button>
+            </div>
+            <p id="mensagem-cupom"></p>
+        </div>
+
+        <div class="carrinho-resumo">
+            <p>Subtotal: <span id="subtotal-carrinho">R$ 0,00</span></p>
+            <p>Desconto: <span id="desconto-carrinho">R$ 0,00</span></p>
+            <p>Frete: <span id="frete-carrinho">R$ 0,00</span></p>
+            <h3>Total: <span id="total-carrinho">R$ 0,00</span></h3>
+        </div>
+
+        <div class="carrinho-acoes">
+            <button id="limpar-carrinho" type="button">Esvaziar carrinho</button>
+            <button id="continuar-comprando" type="button">Continuar comprando</button>
+            <button id="finalizar-compra" type="button">Finalizar compra</button>
+        </div>
+    </div>
+</div>
+<script src="../JS/produtos.js"></script>
 </body>
 </html>
