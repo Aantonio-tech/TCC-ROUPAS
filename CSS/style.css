@@ -1264,3 +1264,72 @@ body {
 .btn-comprar {
     pointer-events: auto;
 }
+
+/* Fundo escuro que bloqueia o clique fora */
+.carrinho-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  /* O container do carrinho propriamente dito (abre da direita para a esquerda) */
+  .carrinho-conteudo {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 450px; /* Largura ideal para desktop e mobile */
+    height: 100%;
+    background-color: #121212; /* Cor escura baseada no seu layout */
+    color: #fff;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Quando o carrinho ganha a classe 'aberto', ele aparece na tela */
+  .carrinho-overlay.aberto {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .carrinho-overlay.aberto .carrinho-conteudo {
+    transform: translateX(0);
+  }
+  
+  /* Estilização rápida dos botões principais (Laranja igual ao seu site) */
+  .btn-finalizar {
+    background-color: #FF5722; /* Altere para o hexadecimal exato do seu laranja */
+    color: white;
+    border: none;
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .btn-fechar {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  /* Área interna de rolagem caso haja muitos produtos */
+  .carrinho-itens {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+  }
+  

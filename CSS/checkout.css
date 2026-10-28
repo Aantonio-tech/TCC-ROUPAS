@@ -1,0 +1,64 @@
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{background:#080808;color:white;font-family:Inter,sans-serif}
+
+header{padding:22px 6%;border-bottom:1px solid #252525;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+
+.logo{color:white;font:32px 'Bebas Neue',sans-serif;text-decoration:none}
+
+.logo span{color:#ff5a1f}
+
+.voltar{color:white;text-decoration:none;border:1px solid #444;padding:10px 15px;border-radius:5px}
+
+main{max-width:1100px;margin:auto;padding:40px 20px}
+
+h1,h2{font-family:'Bebas Neue',sans-serif}
+
+h1{font-size:48px;margin-bottom:10px}
+
+.subtitulo{color:#aaa;margin-bottom:30px;line-height:1.6}
+
+.layout{display:grid;grid-template-columns:1.5fr 1fr;gap:25px;align-items:start}
+
+.painel{background:#111;border:1px solid #292929;border-radius:10px;padding:25px;margin-bottom:20px}
+
+h2{font-size:28px;margin-bottom:20px}
+
+.campos{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+
+.campo{display:flex;flex-direction:column;gap:8px}
+
+.completo{grid-column:1/-1}
+
+label{font-size:13px;color:#ccc}
+
+input,select{width:100%;padding:13px;background:#080808;border:1px solid #383838;border-radius:5px;color:white;font:inherit}
+
+input:focus,select:focus{outline:1px solid #ff5a1f;border-color:#ff5a1f}
+
+.opcao{display:flex;align-items:center;gap:12px;padding:15px;border:1px solid #383838;border-radius:7px;cursor:pointer}
+
+.opcao input{width:auto;accent-color:#ff5a1f}
+
+.opcao span{display:flex;flex-direction:column;gap:5px}
+
+.opcao small{color:#aaa}
+
+.item{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid #292929;line-height:1.5}
+
+.item span:last-child{white-space:nowrap}
+
+.total{display:flex;justify-content:space-between;font-size:21px;font-weight:700;margin-top:22px}
+
+.btn{width:100%;padding:16px;background:#ff5a1f;color:white;border:0;border-radius:7px;font-size:16px;font-weight:700;cursor:pointer;margin-top:22px}
+
+.btn:hover{background:#e6460d}
+
+.aviso{color:#aaa;font-size:12px;line-height:1.6;margin-top:15px}
+
+#mensagem{margin-top:15px;line-height:1.6}
+
+footer{text-align:center;padding:25px;border-top:1px solid #252525;color:#777}
+
+@media(max-width:750px){.layout{grid-template-columns:1fr}.campos{grid-template-columns:1fr}.completo{grid-column:auto}h1{font-size:40px}}
+

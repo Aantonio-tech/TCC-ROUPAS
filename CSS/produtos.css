@@ -160,3 +160,74 @@ body {
         min-height: 260px;
     }
 }
+
+/* Camisas */
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{background:#080808;color:white;font-family:Inter,sans-serif}
+
+header{padding:22px 6%;border-bottom:1px solid #252525;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+
+.logo{color:white;font:32px 'Bebas Neue',sans-serif;text-decoration:none}
+
+.logo span{color:#ff5a1f}
+
+.voltar,.btn-carrinho{color:white;text-decoration:none;border:1px solid #444;padding:11px 16px;border-radius:5px;background:transparent;cursor:pointer}
+
+.voltar:hover,.btn-carrinho:hover{border-color:#ff5a1f;color:#ff5a1f}
+
+main{max-width:1500px;margin:auto;padding:55px 30px}
+
+.titulo{margin-bottom:35px}
+
+.titulo h1{font:clamp(42px,6vw,68px) 'Bebas Neue',sans-serif;margin-bottom:10px}
+
+.titulo p{color:#aaa;line-height:1.7}
+
+.produtos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}
+
+.produto{background:#111;border:1px solid #252525;border-radius:10px;overflow:hidden;transition:.3s;min-width:0}
+
+.produto:hover{transform:translateY(-4px);border-color:#ff5a1f}
+
+.produto img{width:100%;height:320px;object-fit:cover;display:block;background:#181818}
+
+.info{padding:25px}
+
+.categoria{color:#ff5a1f;font-size:12px;text-transform:uppercase;letter-spacing:2px}
+
+.info h2{font:29px 'Bebas Neue',sans-serif;margin:12px 0}
+
+.descricao{color:#aaa;font-size:15px;line-height:1.7;min-height:52px}
+
+.preco{font-size:25px;font-weight:700;margin:22px 0}
+
+.btn-comprar{width:100%;padding:16px;background:#ff5a1f;color:white;border:none;border-radius:7px;font-size:17px;font-weight:700;cursor:pointer;margin-top:8px}
+
+.btn-comprar:hover{background:#e6460d}
+
+#carrinho{display:none;margin-top:35px;padding:25px;background:#111;border:1px solid #ff5a1f;border-radius:10px}
+
+#carrinho h2{font:32px 'Bebas Neue',sans-serif;margin-bottom:20px}
+
+.item{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:15px 0;border-bottom:1px solid #333;flex-wrap:wrap}
+
+.item p{color:#aaa;margin-top:5px}
+
+.btn-remover,.btn-secundario{padding:10px 14px;border:1px solid #555;border-radius:5px;background:transparent;color:white;cursor:pointer}
+
+.btn-remover:hover,.btn-secundario:hover{border-color:#ff5a1f;color:#ff5a1f}
+
+.total{font-size:23px;font-weight:700;margin:22px 0}
+
+.acoes{display:flex;gap:10px;flex-wrap:wrap}
+
+.vazio{color:#aaa}
+
+footer{text-align:center;padding:25px;color:#777;border-top:1px solid #252525}
+
+@media(max-width:900px){.produtos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+@media(max-width:600px){main{padding:35px 18px}.produtos{grid-template-columns:1fr}.info{padding:22px}.produto img{height:300px}}
+

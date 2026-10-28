@@ -89,6 +89,9 @@
                 <li><a href="produtos.html">Produtos</a></li>
                 <li><a href="colaboradores.html">Colaboradores</a></li>
                 <li><a href="contato.html">Contato</a></li>
+                
+
+
 
                 <li id="menuConta">
                     <a href="login.html">Login</a>
@@ -399,6 +402,45 @@
 
         atualizarContadorCarrinho();
     </script>
+
+<!-- Botão do Carrinho (Exemplo baseado na sua imagem) -->
+<button id="btn-carrinho">Carrinho (1)</button>
+
+    🛒 Carrinho (<span id="cart-count">1</span>)
+  </button>
+  
+  <!-- Estrutura do Pop-up Lateral -->
+  <div id="carrinho-popup" class="carrinho-overlay"> ... </div>
+
+    <div class="carrinho-conteudo">
+      <div class="carrinho-header">
+        <h2>Meu Carrinho</h2>
+        <button id="fechar-carrinho" class="btn-fechar">&times;</button>
+      </div>
+      
+      <!-- Lista de produtos (será preenchida dinamicamente) -->
+      <div id="itens-carrinho" class="carrinho-itens">
+        <div class="item">
+          <div>
+            <p class="item-titulo">Camiseta Urban</p>
+            <p class="item-preco">R$ 139,90</p>
+          </div>
+          <button class="btn-remover">Remover</button>
+        </div>
+      </div>
+  
+      <div class="carrinho-footer">
+        <div class="total-container">
+          <span>Total:</span>
+          <span id="total-valor">R$ 139,90</span>
+        </div>
+        <button class="btn-limpar">Limpar carrinho</button>
+        <button class="btn-continuar" id="continuar-comprando">Continuar comprando</button>
+        <button class="btn-finalizar">FINALIZAR COMPRA</button>
+      </div>
+    </div>
+  </div>
+  
 
 </body>
 </html>
