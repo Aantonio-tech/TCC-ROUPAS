@@ -1,82 +1,191 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Soul Street | Camisas</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../CSS/produtos.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Soul Street | Camisas</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../CSS/produtos.css">
 </head>
 
 <body>
-<header>
-<a href="index.html" class="logo">SOUL <span>STREET</span></a>
-<a href="camisas.html" target="_self">Camisas</a>
-<div class="acoes">
-<button class="btn-carrinho" onclick="alternarCarrinho()">🛒 Carrinho (<span id="quantidade">0</span>)</button>
-<a href="produtos.html" class="voltar">← Voltar</a>
-</div>
-</header>
 
-<main>
-<section class="titulo">
-<h1>CAMISAS STREETWEAR</h1>
-<p>Vista sua identidade. Confira nossa coleção de camisetas urbanas.</p>
-</section>
+    <header>
 
-<section class="produtos">
-<article class="produto">
-<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=85" alt="Camiseta branca">
-<div class="info">
-<span class="categoria">Essenciais</span>
-<h2>Camiseta Oversized</h2>
-<p class="descricao">Modelagem ampla e visual minimalista para o dia a dia.</p>
-<p class="preco">R$ 119,90</p>
-<button class="btn-comprar" onclick="adicionarAoCarrinho('Camiseta Oversized',119.90)">COMPRAR</button>
-</div>
-</article>
+        <a href="index.html" class="logo">
+            SOUL <span>STREET</span>
+        </a>
 
-<article class="produto">
-<img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=800&q=85" alt="Camiseta urbana">
-<div class="info">
-<span class="categoria">Urban Style</span>
-<h2>Camiseta Urban</h2>
-<p class="descricao">Estilo urbano com uma combinação moderna e versátil.</p>
-<p class="preco">R$ 139,90</p>
-<button class="btn-comprar" onclick="adicionarAoCarrinho('Camiseta Urban',139.90)">COMPRAR</button>
-</div>
-</article>
+        <a href="camisas.html" target="_self">Camisas</a>
 
-<article class="produto">
-<img src="https://images.unsplash.com/photo-1527719327859-c6ce80353573?auto=format&fit=crop&w=800&q=85" alt="Camiseta streetwear">
-<div class="info">
-<span class="categoria">Street Premium</span>
-<h2>Camiseta Street</h2>
-<p class="descricao">Uma peça versátil para compor diferentes looks urbanos.</p>
-<p class="preco">R$ 149,90</p>
-<button class="btn-comprar" onclick="adicionarAoCarrinho('Camiseta Street',149.90)">COMPRAR</button>
-</div>
-</article>
-</section>
+        <div class="acoes">
 
-<section id="carrinho">
-<h2>MEU CARRINHO</h2>
-<div id="itens-carrinho"></div>
-<p class="total">Total: <span id="total">R$ 0,00</span></p>
-<div class="acoes">
-<button class="btn-secundario" onclick="limparCarrinho()">Limpar carrinho</button>
-<button class="btn-secundario" onclick="alternarCarrinho()">Continuar comprando</button>
-<button class="btn-comprar" style="width:auto;margin:0" onclick="irParaCheckout()">FINALIZAR COMPRA</button>
-</div>
-</section>
-</main>
+            <button class="btn-carrinho" onclick="alternarCarrinho()">
+                🛒 Carrinho (<span id="quantidade">0</span>)
+            </button>
 
-<footer>© 2026 Soul Street — Alma da Rua.</footer>
+            <a href="produtos.html" class="voltar">
+                ← Voltar
+            </a>
 
+        </div>
 
-<script src="camisa.js"></script>
-<script src="../JS/camisa.js" defer></script>
-</body>
-</html>
+    </header>
+
+    <main>
+
+        <section class="titulo">
+
+            <h1>CAMISAS STREETWEAR</h1>
+
+            <p>
+                Vista sua identidade. Confira nossa coleção de camisetas urbanas.
+            </p>
+
+        </section>
+
+        <section class="produtos">
+
+            <!-- PRODUTO 1 -->
+
+            <article class="produto">
+
+                <img
+                    src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=85"
+                    alt="Camiseta branca">
+
+                <div class="info">
+
+                    <span class="categoria">Essenciais</span>
+
+                    <h2>Camiseta Oversized</h2>
+
+                    <p class="descricao">
+                        Modelagem ampla e visual minimalista para o dia a dia.
+                    </p>
+
+                    <p class="preco">R$ 119,90</p>
+
+                    <button
+                        class="btn-comprar"
+                        onclick="adicionarAoCarrinho('Camiseta Oversized', 119.90)">
+                        COMPRAR
+                    </button>
+
+                </div>
+
+            </article>
+
+            <!-- PRODUTO 2 -->
+
+            <article class="produto">
+
+                <img
+                    src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=800&q=85"
+                    alt="Camiseta urbana">
+
+                <div class="info">
+
+                    <span class="categoria">Urban Style</span>
+
+                    <h2>Camiseta Urban</h2>
+
+                    <p class="descricao">
+                        Estilo urbano com uma combinação moderna e versátil.
+                    </p>
+
+                    <p class="preco">R$ 139,90</p>
+
+                    <button
+                        class="btn-comprar"
+                        onclick="adicionarAoCarrinho('Camiseta Urban', 139.90)">
+                        COMPRAR
+                    </button>
+
+                </div>
+
+            </article>
+
+            <!-- PRODUTO 3 -->
+
+            <article class="produto">
+
+                <img
+                    src="https://images.unsplash.com/photo-1527719327859-c6ce80353573?auto=format&fit=crop&w=800&q=85"
+                    alt="Camiseta streetwear">
+
+                <div class="info">
+
+                    <span class="categoria">Street Premium</span>
+
+                    <h2>Camiseta Street</h2>
+
+                    <p class="descricao">
+                        Uma peça versátil para compor diferentes looks urbanos.
+                    </p>
+
+                    <p class="preco">R$ 149,90</p>
+
+                    <button
+                        class="btn-comprar"
+                        onclick="adicionarAoCarrinho('Camiseta Street', 149.90)">
+                        COMPRAR
+                    </button>
+
+                </div>
+
+            </article>
+
+        </section>
+
+        <!-- CARRINHO -->
+
+        <section id="carrinho" style="display: none;">
+
+            <h2>MEU CARRINHO</h2>
+
+            <div id="itens-carrinho"></div>
+
+            <p class="total">
+                Total: <span id="total">R$ 0,00</span>
+            </p>
+
+            <div class="acoes">
+
+                <button
+                    class="btn-secundario"
+                    onclick="limparCarrinho()">
+                    Limpar carrinho
+                </button>
+
+                <button
+                    class="btn-secundario"
+                    onclick="alternarCarrinho()">
+                    Continuar comprando
+                </button>
+
+                <button
+                    class="btn-comprar"
+                    style="width: auto; margin: 0;"
+                    onclick="irParaCheckout()">
+                    FINALIZAR COMPRA
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 Soul Street — Alma da Rua.
+    </footer>
+
+    <!-- CARREGAR JAVASCRIPT APENAS UMA VEZ -->
+
+    <script src="../JS/camisa.js" defer></script>

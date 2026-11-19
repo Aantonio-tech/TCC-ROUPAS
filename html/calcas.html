@@ -1,103 +1,141 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Soul Street | Calças</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../CSS/produtos.css">
-   
 </head>
 
 <body>
 
-    <header>
-        <a href="index.html" class="logo">
-            SOUL <span>STREET</span>
-        </a>
+<header>
+    <a href="index.html" class="logo">
+        SOUL <span>STREET</span>
+    </a>
 
-        <a href="index.html#produtos" class="voltar">
-            ← Voltar
-        </a>
-    </header>
+    <div class="acoes">
+        <button id="btn-carrinho" class="btn-carrinho" type="button">
+            🛒 Carrinho (<span id="contador-carrinho">0</span>)
+        </button>
 
-    <main>
-        <section class="titulo">
-            <h1>CALÇAS STREETWEAR</h1>
-            <p>Conforto, atitude e estilo para acompanhar seu ritmo.</p>
-        </section>
+        <a href="produtos.html" class="voltar">← Voltar</a>
+    </div>
+</header>
 
-        <section class="produtos">
+<main>
 
-            <article class="produto">
-                <img
-                    src="https://images.unsplash.com/photo-1517438476312-10d79c077509?auto=format&fit=crop&w=800&q=85"
-                    alt="Calça cargo urbana"
-                    loading="lazy"
-                >
-                <div class="info">
-                    <span class="categoria">Urban Style</span>
-                    <h2>Calça Cargo Premium</h2>
-                    <p class="descricao">
-                        Bolsos funcionais e modelagem urbana para um visual marcante.
-                    </p>
-                    <p class="preco">R$ 189,90</p>
-                    <a href="contatos.html" class="botao">COMPRAR</a>
-                </div>
-            </article>
+    <section class="titulo">
+        <h1>CALÇAS STREETWEAR</h1>
+        <p>Conforto, atitude e estilo para acompanhar seu ritmo.</p>
+    </section>
 
-            <article class="produto">
-                <img
-                    src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=800&q=85"
-                    alt="Calça jeans"
-                    loading="lazy"
-                >
-                <div class="info">
-                    <span class="categoria">Street Basic</span>
-                    <h2>Calça Jeans Wide</h2>
-                    <p class="descricao">
-                        Modelagem ampla, estilo versátil e conforto para o dia a dia.
-                    </p>
-                    <p class="preco">R$ 169,90</p>
-                    <a href="contatos.html" class="botao">COMPRAR</a>
-                </div>
-            </article>
+    <section class="produtos">
 
-            <article class="produto">
-                <img
-                    src="https://images.unsplash.com/photo-1552902865-b72c031ac5ea?auto=format&fit=crop&w=800&q=85"
-                    alt="Calça casual de moletom"
-                    loading="lazy"
-                >
-                <div class="info">
-                    <span class="categoria">Comfort</span>
-                    <h2>Calça Moletom Street</h2>
-                    <p class="descricao">
-                        Tecido confortável e estilo casual para compor seu look.
-                    </p>
-                    <p class="preco">R$ 139,90</p>
-                    <a href="contatos.html" class="botao">COMPRAR</a>
-                </div>
-            </article>
+        <!-- PRODUTO 1 -->
 
-        </section>
-    </main>
+        <article class="produto">
+            <img
+                src="https://images.unsplash.com/photo-1517438476312-10d79c077509?auto=format&fit=crop&w=800&q=85"
+                alt="Calça cargo urbana"
+                loading="lazy"
+            >
 
-    <footer>
-        © 2026 Soul Street — Alma da Rua.
-    </footer>
-    <script src="../JS/produtos.js"></script>
-    
-<!-- CARRINHO SOUL STREET -->
-<button id="btn-carrinho" class="btn-carrinho" type="button">
-    🛒 Carrinho (<span id="contador-carrinho">0</span>)
-</button>
+            <div class="info">
+                <span class="categoria">Urban Style</span>
+
+                <h2>Calça Cargo Premium</h2>
+
+                <p class="descricao">
+                    Bolsos funcionais e modelagem urbana para um visual marcante.
+                </p>
+
+                <p class="preco">R$ 189,90</p>
+
+                <button class="btn-comprar"
+                    onclick="comprarAgora('Calça Cargo Premium',189.90)">
+                    COMPRAR
+                </button>
+            </div>
+        </article>
+
+        <!-- PRODUTO 2 -->
+
+        <article class="produto">
+            <img
+                src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=800&q=85"
+                alt="Calça jeans"
+                loading="lazy"
+            >
+
+            <div class="info">
+                <span class="categoria">Street Basic</span>
+
+                <h2>Calça Jeans Wide</h2>
+
+                <p class="descricao">
+                    Modelagem ampla, estilo versátil e conforto para o dia a dia.
+                </p>
+
+                <p class="preco">R$ 169,90</p>
+
+                <button class="btn-comprar"
+                    onclick="comprarAgora('Calça Jeans Wide',169.90)">
+                    COMPRAR
+                </button>
+            </div>
+        </article>
+
+        <!-- PRODUTO 3 -->
+
+        <article class="produto">
+            <img
+                src="https://images.unsplash.com/photo-1552902865-b72c031ac5ea?auto=format&fit=crop&w=800&q=85"
+                alt="Calça casual de moletom"
+                loading="lazy"
+            >
+
+            <div class="info">
+                <span class="categoria">Comfort</span>
+
+                <h2>Calça Moletom Street</h2>
+
+                <p class="descricao">
+                    Tecido confortável e estilo casual para compor seu look.
+                </p>
+
+                <p class="preco">R$ 139,90</p>
+
+                <button class="btn-comprar"
+                    onclick="comprarAgora('Calça Moletom Street',139.90)">
+                    COMPRAR
+                </button>
+            </div>
+        </article>
+
+    </section>
+
+</main>
+
+<footer>
+    © 2026 Soul Street — Alma da Rua.
+</footer>
+
+<!-- CARRINHO -->
 
 <div id="carrinho-container" class="carrinho-overlay" style="display:none">
+
     <div class="carrinho-box">
+
         <div class="carrinho-header">
             <h2>Seu carrinho 🛒</h2>
             <button id="fechar-carrinho" type="button">✕</button>
@@ -106,7 +144,9 @@
         <div id="lista-carrinho"></div>
 
         <div class="carrinho-opcoes">
+
             <label for="frete">Entrega:</label>
+
             <select id="frete">
                 <option value="0">Retirada grátis — R$ 0,00</option>
                 <option value="10">Entrega econômica — R$ 10,00</option>
@@ -114,31 +154,64 @@
             </select>
 
             <label for="cupom">Cupom de desconto:</label>
+
             <div class="cupom-linha">
                 <input id="cupom" type="text" placeholder="BEMVINDO10">
                 <button id="aplicar-cupom" type="button">Aplicar</button>
             </div>
+
             <p id="mensagem-cupom"></p>
+
         </div>
 
         <div class="carrinho-resumo">
             <p>Subtotal: <span id="subtotal-carrinho">R$ 0,00</span></p>
             <p>Desconto: <span id="desconto-carrinho">R$ 0,00</span></p>
             <p>Frete: <span id="frete-carrinho">R$ 0,00</span></p>
+
             <h3>Total: <span id="total-carrinho">R$ 0,00</span></h3>
         </div>
 
         <div class="carrinho-acoes">
-            <button id="limpar-carrinho" type="button">Esvaziar carrinho</button>
-            <button id="continuar-comprando" type="button">Continuar comprando</button>
-            <button id="finalizar-compra" type="button">Finalizar compra</button>
+            <button id="limpar-carrinho" type="button">
+                Esvaziar carrinho
+            </button>
+
+            <button id="continuar-comprando" type="button">
+                Continuar comprando
+            </button>
+
+            <button id="finalizar-compra" type="button">
+                Finalizar compra
+            </button>
         </div>
+
     </div>
 </div>
 
-<script src="../JS/produtos.js"></script>
-</body>
-</html>
+<script>
+    // Compra direta do produto escolhido
+    function comprarAgora(nome, preco) {
+
+        const produto = {
+            id: nome.toLowerCase(),
+            nome: nome,
+            preco: Number(preco),
+            quantidade: 1
+        };
+
+        localStorage.setItem(
+            "soulStreetCarrinho",
+            JSON.stringify([produto])
+        );
+
+        localStorage.removeItem("soulStreetCupom");
+
+        window.location.href = "checkout.html";
+    }
+</script>
+
+<script src="../JS/produtos.js" defer></script>
 
 </body>
 </html>

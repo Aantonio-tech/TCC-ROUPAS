@@ -1,104 +1,141 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Soul Street | Tênis</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/produtos.css">
 
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../CSS/produtos.css">
 </head>
 
 <body>
 
-    <header>
-        <a href="index.html" class="logo">
-            SOUL <span>STREET</span>
-        </a>
+<header>
+    <a href="index.html" class="logo">
+        SOUL <span>STREET</span>
+    </a>
 
-        <a href="index.html#produtos" class="voltar">
-            ← Voltar
-        </a>
-    </header>
+    <div class="acoes">
+        <button id="btn-carrinho" class="btn-carrinho" type="button">
+            🛒 Carrinho (<span id="contador-carrinho">0</span>)
+        </button>
 
-    <main>
-        <section class="titulo">
-            <h1>TÊNIS STREETWEAR</h1>
-            <p>Encontre o modelo ideal para completar seu estilo urbano.</p>
-        </section>
+        <a href="produtos.html" class="voltar">← Voltar</a>
+    </div>
+</header>
 
-        <section class="produtos">
+<main>
 
-            <article class="produto">
-                <img
-                    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=85"
-                    alt="Tênis esportivo vermelho"
-                    loading="lazy"
-                >
-                <div class="info">
-                    <span class="categoria">Urban Classic</span>
-                    <h2>Tênis Urban Classic</h2>
-                    <p class="descricao">
-                        Design esportivo e moderno para destacar seu visual.
-                    </p>
-                    <p class="preco">R$ 299,90</p>
-                    <a href="contatos.html" class="botao">COMPRAR</a>
-                </div>
-            </article>
+    <section class="titulo">
+        <h1>TÊNIS STREETWEAR</h1>
+        <p>Encontre o modelo ideal para completar seu estilo urbano.</p>
+    </section>
 
-            <article class="produto">
-                <img
-                    src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=85"
-                    alt="Tênis casual urbano"
-                    loading="lazy"
-                >
-                <div class="info">
-                    <span class="categoria">Street Premium</span>
-                    <h2>Tênis Street Pro</h2>
-                    <p class="descricao">
-                        Acabamento moderno para combinar com diferentes peças.
-                    </p>
-                    <p class="preco">R$ 349,90</p>
-                    <a href="contatos.html" class="botao">COMPRAR</a>
-                </div>
-            </article>
+    <section class="produtos">
 
-            <article class="produto">
-                <img
-                    src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=800&q=85"
-                    alt="Tênis casual branco"
-                    loading="lazy"
-                >
-                <div class="info">
-                    <span class="categoria">Essential</span>
-                    <h2>Tênis Essential</h2>
-                    <p class="descricao">
-                        Visual minimalista, versátil e ideal para o cotidiano.
-                    </p>
-                    <p class="preco">R$ 279,90</p>
-                    <a href="contatos.html" class="botao">COMPRAR</a>
-                </div>
-            </article>
+        <!-- PRODUTO 1 -->
 
-        </section>
-    </main>
+        <article class="produto">
+            <img
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=85"
+                alt="Tênis esportivo vermelho"
+                loading="lazy"
+            >
 
-    <footer>
-        © 2026 Soul Street — Alma da Rua.
-    </footer>
-    <script src="../JS/produtos.js"></script>
-    
-<!-- CARRINHO SOUL STREET -->
-<button id="btn-carrinho" class="btn-carrinho" type="button">
-    🛒 Carrinho (<span id="contador-carrinho">0</span>)
-</button>
+            <div class="info">
+                <span class="categoria">Urban Classic</span>
+
+                <h2>Tênis Urban Classic</h2>
+
+                <p class="descricao">
+                    Design esportivo e moderno para destacar seu visual.
+                </p>
+
+                <p class="preco">R$ 299,90</p>
+
+                <button class="btn-comprar"
+                    onclick="comprarAgora('Tênis Urban Classic',299.90)">
+                    COMPRAR
+                </button>
+            </div>
+        </article>
+
+        <!-- PRODUTO 2 -->
+
+        <article class="produto">
+            <img
+                src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=85"
+                alt="Tênis casual urbano"
+                loading="lazy"
+            >
+
+            <div class="info">
+                <span class="categoria">Street Premium</span>
+
+                <h2>Tênis Street Pro</h2>
+
+                <p class="descricao">
+                    Acabamento moderno para combinar com diferentes peças.
+                </p>
+
+                <p class="preco">R$ 349,90</p>
+
+                <button class="btn-comprar"
+                    onclick="comprarAgora('Tênis Street Pro',349.90)">
+                    COMPRAR
+                </button>
+            </div>
+        </article>
+
+        <!-- PRODUTO 3 -->
+
+        <article class="produto">
+            <img
+                src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=800&q=85"
+                alt="Tênis casual branco"
+                loading="lazy"
+            >
+
+            <div class="info">
+                <span class="categoria">Essential</span>
+
+                <h2>Tênis Essential</h2>
+
+                <p class="descricao">
+                    Visual minimalista, versátil e ideal para o cotidiano.
+                </p>
+
+                <p class="preco">R$ 279,90</p>
+
+                <button class="btn-comprar"
+                    onclick="comprarAgora('Tênis Essential',279.90)">
+                    COMPRAR
+                </button>
+            </div>
+        </article>
+
+    </section>
+
+</main>
+
+<footer>
+    © 2026 Soul Street — Alma da Rua.
+</footer>
+
+<!-- CARRINHO -->
 
 <div id="carrinho-container" class="carrinho-overlay" style="display:none">
+
     <div class="carrinho-box">
+
         <div class="carrinho-header">
             <h2>Seu carrinho 🛒</h2>
             <button id="fechar-carrinho" type="button">✕</button>
@@ -107,7 +144,9 @@
         <div id="lista-carrinho"></div>
 
         <div class="carrinho-opcoes">
+
             <label for="frete">Entrega:</label>
+
             <select id="frete">
                 <option value="0">Retirada grátis — R$ 0,00</option>
                 <option value="10">Entrega econômica — R$ 10,00</option>
@@ -115,31 +154,70 @@
             </select>
 
             <label for="cupom">Cupom de desconto:</label>
+
             <div class="cupom-linha">
                 <input id="cupom" type="text" placeholder="BEMVINDO10">
                 <button id="aplicar-cupom" type="button">Aplicar</button>
             </div>
+
             <p id="mensagem-cupom"></p>
+
         </div>
 
         <div class="carrinho-resumo">
+
             <p>Subtotal: <span id="subtotal-carrinho">R$ 0,00</span></p>
+
             <p>Desconto: <span id="desconto-carrinho">R$ 0,00</span></p>
+
             <p>Frete: <span id="frete-carrinho">R$ 0,00</span></p>
+
             <h3>Total: <span id="total-carrinho">R$ 0,00</span></h3>
+
         </div>
 
         <div class="carrinho-acoes">
-            <button id="limpar-carrinho" type="button">Esvaziar carrinho</button>
-            <button id="continuar-comprando" type="button">Continuar comprando</button>
-            <button id="finalizar-compra" type="button">Finalizar compra</button>
+
+            <button id="limpar-carrinho" type="button">
+                Esvaziar carrinho
+            </button>
+
+            <button id="continuar-comprando" type="button">
+                Continuar comprando
+            </button>
+
+            <button id="finalizar-compra" type="button">
+                Finalizar compra
+            </button>
+
         </div>
+
     </div>
 </div>
 
-<script src="../JS/produtos.js"></script>
-</body>
-</html>
+<script>
+    // Compra direta do produto escolhido
+    function comprarAgora(nome, preco) {
+
+        const produto = {
+            id: nome.toLowerCase(),
+            nome: nome,
+            preco: Number(preco),
+            quantidade: 1
+        };
+
+        localStorage.setItem(
+            "soulStreetCarrinho",
+            JSON.stringify([produto])
+        );
+
+        localStorage.removeItem("soulStreetCupom");
+
+        window.location.href = "checkout.html";
+    }
+</script>
+
+<script src="../JS/produtos.js" defer></script>
 
 </body>
 </html>
