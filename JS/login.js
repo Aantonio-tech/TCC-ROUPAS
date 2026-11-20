@@ -25,7 +25,7 @@ loginForm.addEventListener("submit", function (event) {
         localStorage.setItem("soulStreetLogado", "true");
 
         // Vai para a página da conta
-        window.location.href = "conta.html";
+        window.location.href = "index.html";
 
     } else {
         mensagem.textContent = "E-mail ou senha incorretos.";
