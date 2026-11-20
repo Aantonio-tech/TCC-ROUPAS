@@ -71,6 +71,32 @@ function limparCarrinho() {
 }
 
 function irParaCheckout() {
-    // por enquanto só avisa, depois a gente liga no checkout
-    alert("Indo para o checkout! Total de itens: " + carrinho.length);
+    // se já tiver um pop-up aberto, não cria outro
+    if (document.getElementById("popup-compra")) return;
+
+    const fundo = document.createElement("div");
+    fundo.id = "popup-compra";
+    fundo.style.position = "fixed";
+    fundo.style.top = "0";
+    fundo.style.left = "0";
+    fundo.style.width = "100%";
+    fundo.style.height = "100%";
+    fundo.style.background = "rgba(0,0,0,0.7)";
+    fundo.style.display = "flex";
+    fundo.style.alignItems = "center";
+    fundo.style.justifyContent = "center";
+    fundo.style.zIndex = "9999";
+
+    fundo.innerHTML = `
+        <div style="background:#111; color:#fff; padding:30px; border-radius:12px; text-align:center; max-width:300px; font-family:Inter, sans-serif;">
+            <p style="font-size:18px; margin-bottom:20px;">Compra finalizada com sucesso!!</p>
+            <button id="btn-fechar-popup" style="background:#ff5a00; color:#fff; border:none; padding:10px 25px; border-radius:8px; cursor:pointer; font-weight:bold;">OK</button>
+        </div>
+    `;
+
+    document.body.appendChild(fundo);
+
+    document.getElementById("btn-fechar-popup").addEventListener("click", () => {
+        fundo.remove();
+    });
 }
