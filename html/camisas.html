@@ -1,184 +1,249 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Soul Street | Camisas</title>
-
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="../CSS/produtos.css">
 </head>
-
 <body>
 
-    <header>
-
-        <a href="index.html" class="logo">
-            SOUL <span>STREET</span>
-        </a>
-
-        <header>
+<header>
     <a href="index.html" class="logo">
         SOUL <span>STREET</span>
     </a>
 </header>
 
-    </header>
+<main>
+    <section class="titulo">
+        <h1>CAMISAS STREETWEAR</h1>
+        <p>Vista sua identidade. Confira nossa coleção de camisetas urbanas.</p>
+    </section>
 
-    <main>
-
-        <section class="titulo">
-
-            <h1>CAMISAS STREETWEAR</h1>
-
-            <p>
-                Vista sua identidade. Confira nossa coleção de camisetas urbanas.
-            </p>
-
-        </section>
-
-        <section class="produtos">
-
-            <!-- PRODUTO 1 -->
-
-            <article class="produto">
-
-                <img
-                    src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=85"
-                    alt="Camiseta branca">
-
-                <div class="info">
-
-                    <span class="categoria">Essenciais</span>
-
-                    <h2>Camiseta Oversized</h2>
-
-                    <p class="descricao">
-                        Modelagem ampla e visual minimalista para o dia a dia.
-                    </p>
-
-                    <p class="preco">R$ 119,90</p>
-
-                    <button
-                        class="btn-comprar"
-                        onclick="adicionarAoCarrinho('Camiseta Oversized', 119.90)">
-                        COMPRAR
-                    </button>
-
-                </div>
-
-            </article>
-
-            <!-- PRODUTO 2 -->
-
-            <article class="produto">
-
-                <img
-                    src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=800&q=85"
-                    alt="Camiseta urbana">
-
-                <div class="info">
-
-                    <span class="categoria">Urban Style</span>
-
-                    <h2>Camiseta Urban</h2>
-
-                    <p class="descricao">
-                        Estilo urbano com uma combinação moderna e versátil.
-                    </p>
-
-                    <p class="preco">R$ 139,90</p>
-
-                    <button
-                        class="btn-comprar"
-                        onclick="adicionarAoCarrinho('Camiseta Urban', 139.90)">
-                        COMPRAR
-                    </button>
-
-                </div>
-
-            </article>
-
-            <!-- PRODUTO 3 -->
-
-            <article class="produto">
-
-                <img
-                    src="https://images.unsplash.com/photo-1527719327859-c6ce80353573?auto=format&fit=crop&w=800&q=85"
-                    alt="Camiseta streetwear">
-
-                <div class="info">
-
-                    <span class="categoria">Street Premium</span>
-
-                    <h2>Camiseta Street</h2>
-
-                    <p class="descricao">
-                        Uma peça versátil para compor diferentes looks urbanos.
-                    </p>
-
-                    <p class="preco">R$ 149,90</p>
-
-                    <button
-                        class="btn-comprar"
-                        onclick="adicionarAoCarrinho('Camiseta Street', 149.90)">
-                        COMPRAR
-                    </button>
-
-                </div>
-
-            </article>
-
-        </section>
-
-        <!-- CARRINHO -->
-
-        <section id="carrinho" style="display: none;">
-
-            <h2>MEU CARRINHO</h2>
-
-            <div id="itens-carrinho"></div>
-
-            <p class="total">
-                Total: <span id="total">R$ 0,00</span>
-            </p>
-
-            <div class="acoes">
-
-                <button
-                    class="btn-secundario"
-                    onclick="limparCarrinho()">
-                    Limpar carrinho
-                </button>
-
-                <button
-                    class="btn-secundario"
-                    onclick="alternarCarrinho()">
-                    Continuar comprando
-                </button>
-
-                <button
-                    class="btn-comprar"
-                    style="width: auto; margin: 0;"
-                    onclick="irParaCheckout()">
-                    FINALIZAR COMPRA
-                </button>
-
+    <section class="produtos">
+        <article class="produto">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=85" alt="Camiseta branca">
+            <div class="info">
+                <span class="categoria">Essenciais</span>
+                <h2>Camiseta Oversized</h2>
+                <p class="descricao">Modelagem ampla e visual minimalista para o dia a dia.</p>
+                <p class="preco">R$ 119,90</p>
+                <button class="btn-comprar" onclick="adicionarAoCarrinho('Camiseta Oversized', 119.90)">COMPRAR</button>
             </div>
+        </article>
 
-        </section>
+        <article class="produto">
+            <img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=800&q=85" alt="Camiseta urbana">
+            <div class="info">
+                <span class="categoria">Urban Style</span>
+                <h2>Camiseta Urban</h2>
+                <p class="descricao">Estilo urbano com uma combinação moderna e versátil.</p>
+                <p class="preco">R$ 139,90</p>
+                <button class="btn-comprar" onclick="adicionarAoCarrinho('Camiseta Urban', 139.90)">COMPRAR</button>
+            </div>
+        </article>
 
-    </main>
+        <article class="produto">
+            <img src="https://images.unsplash.com/photo-1527719327859-c6ce80353573?auto=format&fit=crop&w=800&q=85" alt="Camiseta streetwear">
+            <div class="info">
+                <span class="categoria">Street Premium</span>
+                <h2>Camiseta Street</h2>
+                <p class="descricao">Uma peça versátil para compor diferentes looks urbanos.</p>
+                <p class="preco">R$ 149,90</p>
+                <button class="btn-comprar" onclick="adicionarAoCarrinho('Camiseta Street', 149.90)">COMPRAR</button>
+            </div>
+        </article>
+    </section>
 
-    <footer>
-        © 2026 Soul Street — Alma da Rua.
-    </footer>
+    <!-- CARRINHO COM PAGAMENTO -->
+    <section id="carrinho" style="display:none; background:#111; border:1px solid #ff5a00; border-radius:12px; padding:20px; margin:20px; color:#fff; font-family:Inter, sans-serif;">
+        <h2 style="font-family:'Bebas Neue', sans-serif; font-size:28px; margin-bottom:15px;">MEU CARRINHO</h2>
+        <div id="itens-carrinho" style="margin-bottom:15px; line-height:1.8;"></div>
+        <p style="font-weight:bold; font-size:18px;">Total: <span id="total">R$ 0,00</span></p>
 
-    <!-- CARREGAR JAVASCRIPT APENAS UMA VEZ -->
+        <div style="margin-top:20px; border-top:1px solid #333; padding-top:15px;">
+            <p style="font-weight:bold; margin-bottom:10px;">Forma de pagamento:</p>
+            <label style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="pagamento" value="Pix" onchange="atualizarPagamento()"> 💠 Pix</label>
+            <label style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="pagamento" value="Cartão de Crédito" onchange="atualizarPagamento()"> 💳 Cartão de Crédito</label>
+            <label style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="pagamento" value="Cartão de Débito" onchange="atualizarPagamento()"> 💳 Cartão de Débito</label>
+            <label style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="pagamento" value="Boleto" onchange="atualizarPagamento()"> 🧾 Boleto</label>
+            <p id="erro-pagamento" style="color:#ff5a00; font-size:13px; display:none; margin-top:5px;">Escolha uma forma de pagamento!</p>
+        </div>
 
-    <script src="../JS/camisa.js" defer></script>
+        <div id="dados-pagamento" style="margin-top:15px;"></div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:15px;">
+            <button onclick="limparCarrinho()" style="background:transparent; color:#fff; border:1px solid #555; padding:10px 15px; border-radius:8px; cursor:pointer;">Limpar carrinho</button>
+            <button onclick="continuarComprando()" style="background:transparent; color:#fff; border:1px solid #555; padding:10px 15px; border-radius:8px; cursor:pointer;">Continuar comprando</button>
+            <button onclick="irParaCheckout()" style="background:#ff5a00; color:#fff; border:none; padding:10px 18px; border-radius:8px; cursor:pointer; font-weight:bold;">FINALIZAR COMPRA</button>
+        </div>
+    </section>
+</main>
+
+<footer>© 2026 Soul Street — Alma da Rua.</footer>
+
+<script>
+let carrinho = JSON.parse(localStorage.getItem("carrinhoSoulStreet")) || [];
+let codigoPixAtual = "";
+
+function adicionarAoCarrinho(nome, preco) {
+    carrinho.push({ nome, preco });
+    localStorage.setItem("carrinhoSoulStreet", JSON.stringify(carrinho));
+    atualizarCarrinho();
+    document.getElementById("carrinho").style.display = "block";
+    document.getElementById("carrinho").scrollIntoView({ behavior: "smooth" });
+}
+
+function atualizarCarrinho() {
+    const itensEl = document.getElementById("itens-carrinho");
+    const totalEl = document.getElementById("total");
+    if (!itensEl) return;
+    itensEl.innerHTML = "";
+    let total = 0;
+    carrinho.forEach((item) => {
+        total += item.preco;
+        const div = document.createElement("div");
+        div.textContent = `${item.nome} - R$ ${item.preco.toFixed(2).replace(".", ",")}`;
+        itensEl.appendChild(div);
+    });
+    if (totalEl) totalEl.textContent = `R$ ${total.toFixed(2).replace(".", ",")}`;
+}
+
+function limparCarrinho() {
+    carrinho = [];
+    localStorage.removeItem("carrinhoSoulStreet");
+    atualizarCarrinho();
+    document.getElementById("dados-pagamento").innerHTML = "";
+    document.querySelectorAll('input[name="pagamento"]').forEach(r => r.checked = false);
+}
+
+function continuarComprando() {
+    document.getElementById("carrinho").style.display = "none";
+}
+
+// GERA CÓDIGO PIX COPIA E COLA
+function gerarCodigoPix() {
+    const total = document.getElementById("total").textContent;
+    const aleatorio = Math.random().toString(36).substring(2, 12).toUpperCase();
+    const id = Date.now().toString().slice(-8);
+    codigoPixAtual = `00020126580014BR.GOV.BCB.PIX0136${aleatorio}SOULSTREET${id}520400005303986540${total.replace("R$ ","").replace(",",".")}5802BR5910SOUL STREET6008SAO PAULO62070503***6304${id}`;
+    return codigoPixAtual;
+}
+
+function copiarPix() {
+    navigator.clipboard.writeText(codigoPixAtual).then(() => {
+        const btn = document.getElementById("btn-copiar-pix");
+        if (btn) { btn.textContent = "Copiado! ✅"; setTimeout(() => btn.textContent = "Copiar código", 2000); }
+    });
+}
+
+function atualizarPagamento() {
+    const selecionado = document.querySelector('input[name="pagamento"]:checked');
+    const div = document.getElementById("dados-pagamento");
+    const erro = document.getElementById("erro-pagamento");
+    if (erro) erro.style.display = "none";
+    if (!selecionado) { div.innerHTML = ""; return; }
+
+    if (selecionado.value === "Pix") {
+        const codigo = gerarCodigoPix();
+        const qrUrl = "https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=" + encodeURIComponent(codigo);
+        div.innerHTML = `
+            <div style="background:#000; border:1px dashed #ff5a00; padding:15px; border-radius:8px; text-align:center;">
+                <p style="font-weight:bold;">Pague com Pix</p>
+                <p style="font-size:13px; color:#ccc;">Chave Pix: <b style="color:#fff;">soulstreet@email.com</b></p>
+                <img src="${qrUrl}" alt="QR Code Pix" style="margin:12px auto; background:#fff; padding:8px; border-radius:8px; display:block;">
+                <p style="font-size:12px; color:#aaa; word-break:break-all; text-align:left; background:#111; padding:10px; border-radius:8px;">${codigo}</p>
+                <button onclick="copiarPix()" id="btn-copiar-pix" style="background:#ff5a00; color:#fff; border:none; padding:10px 18px; border-radius:8px; cursor:pointer; font-weight:bold; margin-top:10px; width:100%;">Copiar código</button>
+                <p style="font-size:12px; color:#aaa; margin-top:8px;">Após pagar, clique em FINALIZAR COMPRA</p>
+            </div>`;
+    }
+
+    if (selecionado.value === "Cartão de Crédito" || selecionado.value === "Cartão de Débito") {
+        div.innerHTML = `
+            <p style="font-weight:bold; margin-bottom:8px;">Dados do cartão:</p>
+            <input id="num-cartao" placeholder="Número do cartão - 0000 0000 0000 0000" maxlength="19" oninput="this.value=this.value.replace(/[^0-9]/g,'').replace(/(.{4})/g,'$1 ').trim()" style="width:100%; padding:12px; margin-bottom:8px; border-radius:8px; border:none; box-sizing:border-box;">
+            <input id="nome-cartao" placeholder="Nome impresso no cartão" style="width:100%; padding:12px; margin-bottom:8px; border-radius:8px; border:none; box-sizing:border-box;">
+            <div style="display:flex; gap:8px;">
+                <input id="val-cartao" placeholder="MM/AA" maxlength="5" oninput="this.value=this.value.replace(/[^0-9]/g,'').replace(/(\\d{2})(\\d)/,'$1/$2')" style="flex:1; padding:12px; border-radius:8px; border:none;">
+                <input id="cvv-cartao" placeholder="CVV" maxlength="4" oninput="this.value=this.value.replace(/[^0-9]/g,'')" style="flex:1; padding:12px; border-radius:8px; border:none;">
+            </div>
+            ${selecionado.value === "Cartão de Crédito" ? `<select id="parcelas" style="width:100%; padding:12px; margin-top:8px; border-radius:8px; border:none;"><option>À vista</option><option>2x sem juros</option><option>3x sem juros</option><option>4x sem juros</option><option>5x sem juros</option></select>` : `<p style="font-size:12px; color:#aaa; margin-top:6px;">Débito - valor à vista</p>`}
+            <p id="erro-cartao" style="color:#ff5a00; font-size:13px; display:none; margin-top:8px;">Preencha todos os dados do cartão corretamente!</p>`;
+    }
+
+    if (selecionado.value === "Boleto") {
+        div.innerHTML = `
+            <div style="background:#000; padding:15px; border-radius:8px;">
+                <p style="font-size:14px;">O boleto será gerado após finalizar a compra.</p>
+                <p style="font-size:13px; color:#ccc; margin-top:5px;">Vencimento em 3 dias úteis. Enviaremos no seu e-mail.</p>
+                <input id="nome-boleto" placeholder="Seu nome completo" style="width:100%; padding:12px; margin-top:10px; margin-bottom:8px; border-radius:8px; border:none; box-sizing:border-box;">
+                <input id="cpf-boleto" placeholder="Seu CPF - 000.000.000-00" maxlength="14" oninput="this.value=this.value.replace(/[^0-9]/g,'').replace(/(\\d{3})(\\d)/,'$1.$2').replace(/(\\d{3})(\\d)/,'$1.$2').replace(/(\\d{3})(\\d{1,2})/,'$1-$2')" style="width:100%; padding:12px; border-radius:8px; border:none; box-sizing:border-box;">
+                <input id="email-boleto" placeholder="Seu e-mail" style="width:100%; padding:12px; margin-top:8px; border-radius:8px; border:none; box-sizing:border-box;">
+                <p id="erro-boleto" style="color:#ff5a00; font-size:13px; display:none; margin-top:8px;">Preencha nome, CPF e e-mail!</p>
+            </div>`;
+    }
+}
+
+function irParaCheckout() {
+    const selecionado = document.querySelector('input[name="pagamento"]:checked');
+    const erro = document.getElementById("erro-pagamento");
+    if (!selecionado) { if (erro) erro.style.display = "block"; return; }
+    if (carrinho.length === 0) { alert("Seu carrinho está vazio!"); return; }
+
+    // VALIDAÇÃO CARTÃO
+    if (selecionado.value === "Cartão de Crédito" || selecionado.value === "Cartão de Débito") {
+        const num = document.getElementById("num-cartao")?.value.replace(/\s/g, "") || "";
+        const nome = document.getElementById("nome-cartao")?.value.trim() || "";
+        const val = document.getElementById("val-cartao")?.value || "";
+        const cvv = document.getElementById("cvv-cartao")?.value || "";
+        const erroCartao = document.getElementById("erro-cartao");
+        if (num.length < 16 || nome.length < 3 || val.length < 5 || cvv.length < 3) {
+            if (erroCartao) erroCartao.style.display = "block";
+            return;
+        }
+    }
+
+    // VALIDAÇÃO BOLETO
+    if (selecionado.value === "Boleto") {
+        const nomeB = document.getElementById("nome-boleto")?.value.trim() || "";
+        const cpf = document.getElementById("cpf-boleto")?.value || "";
+        const email = document.getElementById("email-boleto")?.value.trim() || "";
+        const erroB = document.getElementById("erro-boleto");
+        if (nomeB.length < 3 || cpf.length < 14 || !email.includes("@")) {
+            if (erroB) erroB.style.display = "block";
+            return;
+        }
+    }
+
+    if (document.getElementById("popup-compra")) return;
+    let extra = "";
+    if (selecionado.value === "Pix") extra = `<p style="font-size:12px; color:#aaa; word-break:break-all; margin-top:10px;">Código Pix:<br>${codigoPixAtual.substring(0,60)}...</p>`;
+    if (selecionado.value === "Cartão de Crédito") extra = `<p style="font-size:13px; color:#ccc;">Parcelas: ${document.getElementById("parcelas")?.value || "À vista"}</p>`;
+
+    const fundo = document.createElement("div");
+    fundo.id = "popup-compra";
+    fundo.style.position = "fixed"; fundo.style.top = "0"; fundo.style.left = "0";
+    fundo.style.width = "100%"; fundo.style.height = "100%";
+    fundo.style.background = "rgba(0,0,0,0.7)";
+    fundo.style.display = "flex"; fundo.style.alignItems = "center"; fundo.style.justifyContent = "center"; fundo.style.zIndex = "9999";
+    fundo.innerHTML = `
+        <div style="background:#111; color:#fff; padding:30px; border-radius:12px; text-align:center; max-width:340px; font-family:Inter, sans-serif;">
+            <p style="font-size:26px;">✅</p>
+            <p style="font-size:18px; margin:10px 0 8px;">Compra finalizada com sucesso!!</p>
+            <p style="font-size:14px; color:#ccc;">Pagamento: <b style="color:#ff5a00;">${selecionado.value}</b></p>
+            ${extra}
+            <button id="btn-fechar-popup" style="background:#ff5a00; color:#fff; border:none; padding:10px 25px; border-radius:8px; cursor:pointer; font-weight:bold; margin-top:18px;">OK</button>
+        </div>`;
+    document.body.appendChild(fundo);
+    document.getElementById("btn-fechar-popup").addEventListener("click", () => {
+        fundo.remove();
+        limparCarrinho();
+        document.getElementById("carrinho").style.display = "none";
+    });
+}
+document.addEventListener("DOMContentLoaded", atualizarCarrinho);
+</script>
+
 </body>
 </html>
