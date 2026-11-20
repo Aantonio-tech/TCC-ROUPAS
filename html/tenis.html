@@ -1,223 +1,140 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Soul Street | Tênis</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="../CSS/produtos.css">
 </head>
-
 <body>
 
 <header>
     <a href="index.html" class="logo">
         SOUL <span>STREET</span>
     </a>
-
-    <div class="acoes">
-        <button id="btn-carrinho" class="btn-carrinho" type="button">
-            🛒 Carrinho (<span id="contador-carrinho">0</span>)
-        </button>
-
-        <a href="produtos.html" class="voltar">← Voltar</a>
-    </div>
 </header>
 
 <main>
-
     <section class="titulo">
         <h1>TÊNIS STREETWEAR</h1>
         <p>Encontre o modelo ideal para completar seu estilo urbano.</p>
     </section>
 
     <section class="produtos">
-
         <!-- PRODUTO 1 -->
-
         <article class="produto">
-            <img
-                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=85"
-                alt="Tênis esportivo vermelho"
-                loading="lazy"
-            >
-
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=85" alt="Tênis esportivo vermelho" loading="lazy">
             <div class="info">
                 <span class="categoria">Urban Classic</span>
-
                 <h2>Tênis Urban Classic</h2>
-
-                <p class="descricao">
-                    Design esportivo e moderno para destacar seu visual.
-                </p>
-
+                <p class="descricao">Design esportivo e moderno para destacar seu visual.</p>
                 <p class="preco">R$ 299,90</p>
-
-                <button class="btn-comprar"
-                    onclick="comprarAgora('Tênis Urban Classic',299.90)">
-                    COMPRAR
-                </button>
+                <button class="btn-comprar" onclick="adicionarAoCarrinho('Tênis Urban Classic',299.90)">COMPRAR</button>
             </div>
         </article>
 
         <!-- PRODUTO 2 -->
-
         <article class="produto">
-            <img
-                src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=85"
-                alt="Tênis casual urbano"
-                loading="lazy"
-            >
-
+            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=85" alt="Tênis casual urbano" loading="lazy">
             <div class="info">
                 <span class="categoria">Street Premium</span>
-
                 <h2>Tênis Street Pro</h2>
-
-                <p class="descricao">
-                    Acabamento moderno para combinar com diferentes peças.
-                </p>
-
+                <p class="descricao">Acabamento moderno para combinar com diferentes peças.</p>
                 <p class="preco">R$ 349,90</p>
-
-                <button class="btn-comprar"
-                    onclick="comprarAgora('Tênis Street Pro',349.90)">
-                    COMPRAR
-                </button>
+                <button class="btn-comprar" onclick="adicionarAoCarrinho('Tênis Street Pro',349.90)">COMPRAR</button>
             </div>
         </article>
 
         <!-- PRODUTO 3 -->
-
         <article class="produto">
-            <img
-                src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=800&q=85"
-                alt="Tênis casual branco"
-                loading="lazy"
-            >
-
+            <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=800&q=85" alt="Tênis casual branco" loading="lazy">
             <div class="info">
                 <span class="categoria">Essential</span>
-
                 <h2>Tênis Essential</h2>
-
-                <p class="descricao">
-                    Visual minimalista, versátil e ideal para o cotidiano.
-                </p>
-
+                <p class="descricao">Visual minimalista, versátil e ideal para o cotidiano.</p>
                 <p class="preco">R$ 279,90</p>
-
-                <button class="btn-comprar"
-                    onclick="comprarAgora('Tênis Essential',279.90)">
-                    COMPRAR
-                </button>
+                <button class="btn-comprar" onclick="adicionarAoCarrinho('Tênis Essential',279.90)">COMPRAR</button>
             </div>
         </article>
+    </section>
 
+    <!-- CARRINHO IGUAL AO DAS CAMISAS E CALÇAS -->
+    <section id="carrinho" style="display:none; background:#111; border:1px solid #ff5a00; border-radius:12px; padding:20px; margin:20px; color:#fff; font-family:Inter, sans-serif;">
+        <h2 style="font-family:'Bebas Neue', sans-serif; font-size:28px; margin-bottom:15px;">MEU CARRINHO</h2>
+        <div id="itens-carrinho" style="margin-bottom:15px; line-height:1.8;"></div>
+        <p style="font-weight:bold; font-size:18px;">Total: <span id="total">R$ 0,00</span></p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:15px;">
+            <button onclick="limparCarrinho()" style="background:transparent; color:#fff; border:1px solid #555; padding:10px 15px; border-radius:8px; cursor:pointer;">Limpar carrinho</button>
+            <button onclick="continuarComprando()" style="background:transparent; color:#fff; border:1px solid #555; padding:10px 15px; border-radius:8px; cursor:pointer;">Continuar comprando</button>
+            <button onclick="irParaCheckout()" style="background:#ff5a00; color:#fff; border:none; padding:10px 18px; border-radius:8px; cursor:pointer; font-weight:bold;">FINALIZAR COMPRA</button>
+        </div>
     </section>
 
 </main>
 
-<footer>
-    © 2026 Soul Street — Alma da Rua.
-</footer>
-
-<!-- CARRINHO -->
-
-<div id="carrinho-container" class="carrinho-overlay" style="display:none">
-
-    <div class="carrinho-box">
-
-        <div class="carrinho-header">
-            <h2>Seu carrinho 🛒</h2>
-            <button id="fechar-carrinho" type="button">✕</button>
-        </div>
-
-        <div id="lista-carrinho"></div>
-
-        <div class="carrinho-opcoes">
-
-            <label for="frete">Entrega:</label>
-
-            <select id="frete">
-                <option value="0">Retirada grátis — R$ 0,00</option>
-                <option value="10">Entrega econômica — R$ 10,00</option>
-                <option value="20">Entrega expressa — R$ 20,00</option>
-            </select>
-
-            <label for="cupom">Cupom de desconto:</label>
-
-            <div class="cupom-linha">
-                <input id="cupom" type="text" placeholder="BEMVINDO10">
-                <button id="aplicar-cupom" type="button">Aplicar</button>
-            </div>
-
-            <p id="mensagem-cupom"></p>
-
-        </div>
-
-        <div class="carrinho-resumo">
-
-            <p>Subtotal: <span id="subtotal-carrinho">R$ 0,00</span></p>
-
-            <p>Desconto: <span id="desconto-carrinho">R$ 0,00</span></p>
-
-            <p>Frete: <span id="frete-carrinho">R$ 0,00</span></p>
-
-            <h3>Total: <span id="total-carrinho">R$ 0,00</span></h3>
-
-        </div>
-
-        <div class="carrinho-acoes">
-
-            <button id="limpar-carrinho" type="button">
-                Esvaziar carrinho
-            </button>
-
-            <button id="continuar-comprando" type="button">
-                Continuar comprando
-            </button>
-
-            <button id="finalizar-compra" type="button">
-                Finalizar compra
-            </button>
-
-        </div>
-
-    </div>
-</div>
+<footer>© 2026 Soul Street — Alma da Rua.</footer>
 
 <script>
-    // Compra direta do produto escolhido
-    function comprarAgora(nome, preco) {
+let carrinho = JSON.parse(localStorage.getItem("carrinhoSoulStreet")) || [];
 
-        const produto = {
-            id: nome.toLowerCase(),
-            nome: nome,
-            preco: Number(preco),
-            quantidade: 1
-        };
+function adicionarAoCarrinho(nome, preco) {
+    carrinho.push({ nome, preco });
+    localStorage.setItem("carrinhoSoulStreet", JSON.stringify(carrinho));
+    atualizarCarrinho();
+    document.getElementById("carrinho").style.display = "block";
+    document.getElementById("carrinho").scrollIntoView({ behavior: "smooth" });
+}
 
-        localStorage.setItem(
-            "soulStreetCarrinho",
-            JSON.stringify([produto])
-        );
+function atualizarCarrinho() {
+    const itensEl = document.getElementById("itens-carrinho");
+    const totalEl = document.getElementById("total");
+    if (!itensEl) return;
+    itensEl.innerHTML = "";
+    let total = 0;
+    carrinho.forEach((item) => {
+        total += item.preco;
+        const div = document.createElement("div");
+        div.textContent = `${item.nome} - R$ ${item.preco.toFixed(2).replace(".", ",")}`;
+        itensEl.appendChild(div);
+    });
+    if (totalEl) totalEl.textContent = `R$ ${total.toFixed(2).replace(".", ",")}`;
+}
 
-        localStorage.removeItem("soulStreetCupom");
+function limparCarrinho() {
+    carrinho = [];
+    localStorage.removeItem("carrinhoSoulStreet");
+    atualizarCarrinho();
+}
 
-        window.location.href = "checkout.html";
-    }
+function continuarComprando() {
+    document.getElementById("carrinho").style.display = "none";
+}
+
+function irParaCheckout() {
+    if (document.getElementById("popup-compra")) return;
+    const fundo = document.createElement("div");
+    fundo.id = "popup-compra";
+    fundo.style.position = "fixed"; fundo.style.top = "0"; fundo.style.left = "0";
+    fundo.style.width = "100%"; fundo.style.height = "100%";
+    fundo.style.background = "rgba(0,0,0,0.7)";
+    fundo.style.display = "flex"; fundo.style.alignItems = "center"; fundo.style.justifyContent = "center"; fundo.style.zIndex = "9999";
+    fundo.innerHTML = `
+        <div style="background:#111; color:#fff; padding:30px; border-radius:12px; text-align:center; max-width:300px; font-family:Inter, sans-serif;">
+            <p style="font-size:18px; margin-bottom:20px;">Compra finalizada com sucesso!!</p>
+            <button id="btn-fechar-popup" style="background:#ff5a00; color:#fff; border:none; padding:10px 25px; border-radius:8px; cursor:pointer; font-weight:bold;">OK</button>
+        </div>`;
+    document.body.appendChild(fundo);
+    document.getElementById("btn-fechar-popup").addEventListener("click", () => {
+        fundo.remove();
+        limparCarrinho();
+        document.getElementById("carrinho").style.display = "none";
+    });
+}
+document.addEventListener("DOMContentLoaded", atualizarCarrinho);
 </script>
-
-<script src="../JS/produtos.js" defer></script>
 
 </body>
 </html>
