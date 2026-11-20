@@ -1,21 +1,28 @@
-  // Verifica se o usuário está logado
-  const logado = localStorage.getItem("soulStreetLogado");
-  const usuarioSalvo = localStorage.getItem("soulStreetUsuario");
 
-  if (logado !== "true" || !usuarioSalvo) {
-      window.location.href = "login.html";
-  }
+document.addEventListener("DOMContentLoaded", function () {
 
-  // Recupera os dados do usuário
-  const usuario = JSON.parse(usuarioSalvo);
+    const nomeUsuario = document.getElementById("nomeUsuario");
+    const emailUsuario = document.getElementById("emailUsuario");
+    const botaoSair = document.getElementById("sair");
 
-  document.getElementById("nomeUsuario").textContent = usuario.nome;
-  document.getElementById("emailUsuario").textContent = usuario.email;
+    // Busca os dados da conta cadastrada
+    const usuarioSalvo = localStorage.getItem("soulStreetUsuario");
 
-  // Botão sair
-  document.getElementById("sair").addEventListener("click", function () {
+    if (usuarioSalvo) {
+        const usuario = JSON.parse(usuarioSalvo);
 
-      localStorage.removeItem("soulStreetLogado");
+        nomeUsuario.textContent = usuario.nome;
+        emailUsuario.textContent = usuario.email;
 
-      window.location.href = "login.html";
-  });
+    } else {
+        nomeUsuario.textContent = "Visitante";
+        emailUsuario.textContent = "Nenhuma conta encontrada.";
+    }
+
+    // Botão para sair da conta
+    botaoSair.addEventListener("click", function () {
+        localStorage.removeItem("soulStreetLogado");
+        window.location.href = "login.html";
+    });
+
+});
