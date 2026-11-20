@@ -104,21 +104,21 @@
         irParaCheckout();
     };
 
-    // ABRIR E FECHAR CARRINHO
     function abrirCarrinho() {
-        const painel = $("carrinho-container");
-        const carrinhoAntigo = $("carrinho");
+    const painel = $("carrinho-container");
 
-        if (painel) {
-            painel.style.display = "flex";
-            document.body.style.overflow = "hidden";
-        } else if (carrinhoAntigo) {
-            carrinhoAntigo.style.display = "block";
-            carrinhoAntigo.scrollIntoView({
-                behavior: "smooth"
-            });
-        }
+    // Se estiver na página de produtos,
+    // abre a página completa do carrinho
+    if (!painel) {
+        window.location.href = "carrinho.html";
+        return;
     }
+
+    // Se o carrinho estiver na própria página,
+    // abre o painel normalmente
+    painel.style.display = "flex";
+    document.body.style.overflow = "hidden";
+}
 
     function fecharCarrinho() {
         const painel = $("carrinho-container");
