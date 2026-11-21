@@ -1,4 +1,3 @@
-
 const cadastroForm = document.getElementById("cadastroForm");
 const mensagem = document.getElementById("mensagem");
 
@@ -10,7 +9,6 @@ cadastroForm.addEventListener("submit", function (event) {
     const senha = document.getElementById("senha").value;
     const confirmarSenha = document.getElementById("confirmarSenha").value;
 
-    // Verifica se as senhas são iguais
     if (senha !== confirmarSenha) {
         mensagem.textContent = "As senhas não são iguais.";
         mensagem.style.color = "#ff5a1f";
@@ -18,33 +16,30 @@ cadastroForm.addEventListener("submit", function (event) {
     }
 
     try {
-        // Verifica se já existe uma conta
-        const usuarioExistente = localStorage.getItem("soulStreetUsuario");
+        const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
+        const usuarioExistente = usuarios.find(u => u.email === email);
         if (usuarioExistente) {
-            const usuario = JSON.parse(usuarioExistente);
-
-            if (usuario.email === email) {
-                mensagem.textContent = "Este e-mail já está cadastrado.";
-                mensagem.style.color = "#ff5a1f";
-                return;
-            }
+            mensagem.textContent = "Este e-mail já está cadastrado.";
+            mensagem.style.color = "#ff5a1f";
+            return;
         }
 
-        // Cria a conta
         const usuario = {
             nome: nome,
             email: email,
             senha: senha
         };
 
-        // Salva os dados
-        localStorage.setItem("soulStreetUsuario", JSON.stringify(usuario));
+        usuarios.push(usuario);
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
         mensagem.textContent = "Conta criada com sucesso!";
         mensagem.style.color = "#00d1b2";
 
-        // Não apaga os campos nem redireciona automaticamente.
+        setTimeout(() => {
+            window.location.href = "login.html";
+        }, 1000);
 
     } catch (erro) {
         mensagem.textContent = "Erro ao salvar a conta. Tente novamente.";

@@ -1,21 +1,13 @@
-  // Verifica se o usuário está logado
-  const logado = localStorage.getItem("soulStreetLogado");
-  const usuarioSalvo = localStorage.getItem("soulStreetUsuario");
+const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
 
-  if (logado !== "true" || !usuarioSalvo) {
-      window.location.href = "login.html";
-  }
+if (!usuarioLogado) {
+    window.location.href = "login.html";
+} else {
+    document.getElementById("nomeUsuario").textContent = usuarioLogado.nome;
+    document.getElementById("emailUsuario").textContent = usuarioLogado.email;
+}
 
-  // Recupera os dados do usuário
-  const usuario = JSON.parse(usuarioSalvo);
-
-  document.getElementById("nomeUsuario").textContent = usuario.nome;
-  document.getElementById("emailUsuario").textContent = usuario.email;
-
-  // Botão sair
-  document.getElementById("sair").addEventListener("click", function () {
-
-      localStorage.removeItem("soulStreetLogado");
-
-      window.location.href = "login.html";
-  });
+document.getElementById("sair").addEventListener("click", function() {
+    localStorage.removeItem("usuarioLogado");
+    window.location.href = "login.html";
+});
