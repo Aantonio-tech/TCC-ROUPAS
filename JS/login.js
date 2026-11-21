@@ -18,22 +18,14 @@ loginForm.addEventListener("submit", function (event) {
 
     const usuario = usuarios.find(u => u.email === email && u.senha === senha);
 
-<<<<<<< HEAD
     if (usuario) {
         // Salva QUEM logou
         localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
-        window.location.href = "conta.html";
-=======
-    // Verifica login
-    if (email === usuario.email && senha === usuario.senha) {
-
         // Marca que o usuário está logado
         localStorage.setItem("soulStreetLogado", "true");
 
-        // Vai para a página da conta
+        // Vai para a página inicial
         window.location.href = "index.html";
-
->>>>>>> a17e6b0cace318b44919d87554e65bcce43f5010
     } else {
         mensagem.textContent = "E-mail ou senha incorretos.";
         mensagem.style.color = "#ff5a1f";
