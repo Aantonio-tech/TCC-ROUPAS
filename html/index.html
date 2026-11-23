@@ -71,6 +71,7 @@
 
     <!-- CABEÇALHO -->
     <header>
+
         <a href="index.html" class="brand">
 
             <div class="brand-mark"></div>
@@ -95,28 +96,36 @@
                 </div>
 
             </div>
+
         </a>
 
         <nav>
             <ul>
 
+<li>
+    <a href="produtos.html" class="btn-carrinho">
+        🛒 Carrinho (<span id="contador-carrinho">0</span>)
+    </a>
+</li>
+
+>>>>>>> 744e1b0 (Atualiza carrinho e integração do checkout)
                 <li><a href="index.html">Home</a></li>
                 <li><a href="produtos.html">Produtos</a></li>
                 <li><a href="colaboradores.html">Colaboradores</a></li>
-
-                <li><a href="contato.html">Contato</a></li>
-
                 <li><a href="contatos.html">Contato</a></li>
-
                 <li id="menuConta">
-                    <a href="login.html">Login</a>
-                </li>
-
-                <li><a href="conta.html">Contas</a></li>
+    <a href="login.html">Login</a>
+</li>
+                <li id="menuConta">
+    <a href="login.html">Login</a>
+</li>
+              
 
             </ul>
         </nav>
+
     </header>
+
 
     <!-- CONTEÚDO PRINCIPAL -->
     <main class="container">
@@ -139,18 +148,16 @@
                         de maneira moderna e organizada.
                     </p>
 
-                    
-
                     <div class="hero-actions">
+
                         <a href="produtos.html" class="btn btn-primary">
                             Ver Produtos
                         </a>
 
-
                         <a href="contatos.html" class="btn btn-secondary">
                             Fale Conosco
                         </a>
-                        </a>
+
                     </div>
 
                     <div class="hero-stats">
@@ -174,6 +181,7 @@
             </div>
 
         </section>
+
 
         <!-- PRODUTOS EM DESTAQUE -->
         <section class="modules" id="produtos">
@@ -202,6 +210,7 @@
 
         </section>
 
+
         <!-- SEÇÕES DO PROJETO -->
         <section class="modules" id="secoes">
 
@@ -211,8 +220,8 @@
 
                 <p>
                     Essa homepage foi organizada para servir como entrada
-                    principal do seu projeto escolar, com áreas que podem
-                    levar para produtos, colaboradores, login e contato.
+                    principal do projeto Soul Street, com acesso aos produtos,
+                    colaboradores, login e contato.
                 </p>
 
             </div>
@@ -261,6 +270,8 @@
             </div>
 
         </section>
+
+
         <!-- CONTATO -->
         <section class="modules" id="contato">
 
@@ -269,15 +280,15 @@
                 <h2>Contato</h2>
 
                 <p>
-                    Você pode usar essa área para colocar telefone, e-mail,
-                    redes sociais ou qualquer informação de contato do projeto.
+                    Entre em contato com a equipe da Soul Street
+                    para tirar dúvidas e conhecer melhor o projeto.
                 </p>
 
             </div>
 
             <div class="dashboard">
 
-                <a href="contato.html">
+                <a href="contatos.html">
                     <article class="panel">
 
                         <h3>E-mail</h3>
@@ -293,7 +304,7 @@
 
                 </article>
 
-                <a href="contato.html">
+                <a href="contatos.html">
                     <article class="panel">
 
                         <h3>Redes sociais</h3>
@@ -301,18 +312,13 @@
 
                     </article>
                 </a>
-        <!-- CONTATOS -->
-        <section class="modules" id="contatos">
-
-            <div class="section-head">
-                
-
 
             </div>
 
         </section>
 
     </main>
+
 
     <!-- JAVASCRIPT -->
     <script>
@@ -370,12 +376,15 @@
 
         ];
 
+
         // ELEMENTOS HTML
         const container = document.getElementById("product-container");
         const botaoMais = document.getElementById("btn-load-more");
 
+
         // CONTROLE DE EXIBIÇÃO
         let produtosExibidos = 3;
+
 
         // FUNÇÃO PARA MOSTRAR PRODUTOS
         function mostrarProdutos() {
@@ -411,14 +420,20 @@
 
             });
 
+
             // ESCONDER BOTÃO QUANDO NÃO HOUVER MAIS PRODUTOS
             if (produtosExibidos >= listaProdutos.length) {
+
                 botaoMais.style.display = "none";
+
             } else {
+
                 botaoMais.style.display = "inline-block";
+
             }
 
         }
+
 
         // BOTÃO VER MAIS
         botaoMais.addEventListener("click", function () {
@@ -428,6 +443,7 @@
             mostrarProdutos();
 
         });
+
 
         // CARREGAR PRODUTOS INICIALMENTE
         mostrarProdutos();
@@ -443,7 +459,9 @@
             ) || [];
 
             const quantidade = carrinho.reduce((total, produto) => {
+
                 return total + (Number(produto.quantidade) || 1);
+
             }, 0);
 
             contador.textContent = quantidade;
@@ -451,6 +469,29 @@
         }
 
         atualizarContadorCarrinho();
+
+
+        // MENU DE LOGIN E MINHA CONTA
+        function atualizarMenuConta() {
+
+            const menuConta = document.getElementById("menuConta");
+
+            const usuarioSalvo = localStorage.getItem("soulStreetUsuario");
+
+            const logado = localStorage.getItem("soulStreetLogado");
+
+            if (usuarioSalvo && logado === "true") {
+
+              menuConta.innerHTML = '<a href="conta.html">Minha Conta</a>';
+            } else {
+
+                menuConta.innerHTML = '<a href="login.html">Login</a>';
+
+            }
+
+        }
+
+        atualizarMenuConta();
 
     </script>
 

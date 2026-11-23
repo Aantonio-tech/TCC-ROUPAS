@@ -1,71 +1,121 @@
-let carrinho=[];
 
-try{
-carrinho=JSON.parse(sessionStorage.getItem('soulStreetCarrinho'))||[];
-if(!Array.isArray(carrinho))carrinho=[];
-}catch(e){carrinho=[];}
+const CHAVE_CARRINHO = "soulStreetCarrinho";
+const CHAVE_CHECKOUT = "soulStreetCheckout";
 
-function dinheiro(valor){
-return Number(valor).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+let carrinho = [];
+let dadosCheckout = null;
+
+function dinheiro(valor) {
+    return Number(valor || 0).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+    });
 }
 
-function mostrarResumo(){
-const area=document.getElementById('itens');
-area.innerHTML='';
-let total=0;
+function carregarDados() {
+    try {
+        carrinho = JSON.parse(
+            localStorage.getItem(CHAVE_CARRINHO) || "[]"
+        );
 
-if(carrinho.length===0){
-area.innerHTML='<p class="aviso">Carrinho vazio. Volte às camisas e adicione produtos.</p>';
+        dadosCheckout = JSON.parse(
+            localStorage.getItem(CHAVE_CHECKOUT) || "null"
+        );
+
+        if (!Array.isArray(carrinho)) {
+            carrinho = [];
+        }
+
+        if (!dadosCheckout) {
+            dadosCheckout = {};
+        }
+
+    } catch (erro) {
+        carrinho = [];
+        dadosCheckout = {};
+    }
 }
 
-carrinho.forEach(produto=>{
-const preco=Number(produto.preco);
-if(!produto.nome||!Number.isFinite(preco)||preco<0)return;
-total+=preco;
+function mostrarResumo() {
+    const area = document.getElementById("itens");
+    const totalElemento = document.getElementById("total");
 
-const linha=document.createElement('div');
-linha.className='item';
+    area.innerHTML = "";
 
-const nome=document.createElement('span');
-nome.textContent=produto.nome;
+    let subtotal = 0;
 
-const valor=document.createElement('span');
-valor.textContent=dinheiro(preco);
+    if (carrinho.length === 0) {
+        area.innerHTML =
+            '<p class="aviso">Carrinho vazio. Volte aos produtos e adicione itens.</p>';
 
-linha.append(nome,valor);
-area.appendChild(linha);
+        totalElemento.textContent = dinheiro(0);
+        return;
+    }
+
+    carrinho.forEach(produto => {
+        const preco = Number(produto.preco) || 0;
+        const quantidade = Number(produto.quantidade) || 1;
+
+        subtotal += preco * quantidade;
+
+        const linha = document.createElement("div");
+        linha.className = "item";
+
+        const nome = document.createElement("span");
+        nome.textContent = produto.nome + " × " + quantidade;
+
+        const valor = document.createElement("span");
+        valor.textContent = dinheiro(preco * quantidade);
+
+        linha.append(nome, valor);
+        area.appendChild(linha);
+    });
+
+    const total = Number.isFinite(Number(dadosCheckout.total))
+        ? Number(dadosCheckout.total)
+        : subtotal;
+
+    totalElemento.textContent = dinheiro(total);
+}
+
+document.getElementById("formulario").addEventListener("submit", function(evento) {
+    evento.preventDefault();
+
+    const mensagem = document.getElementById("mensagem");
+
+    if (carrinho.length === 0) {
+        mensagem.textContent =
+            "Seu carrinho está vazio. Volte aos produtos e adicione itens.";
+        return;
+    }
+
+    if (!this.reportValidity()) return;
+
+    const pagamento = document.querySelector(
+        'input[name="pagamento"]:checked'
+    );
+
+    if (!pagamento) {
+        mensagem.textContent = "Escolha uma forma de pagamento.";
+        return;
+    }
+
+    const nome = document.getElementById("nome").value.trim();
+    const sobrenome = document.getElementById("sobrenome").value.trim();
+
+    mensagem.textContent =
+        "Pedido demonstrativo confirmado para " +
+        nome + " " + sobrenome +
+        ". Pagamento escolhido: " + pagamento.value +
+        ". Nenhum pagamento real foi realizado.";
+
+    localStorage.removeItem(CHAVE_CARRINHO);
+    localStorage.removeItem(CHAVE_CHECKOUT);
+    localStorage.removeItem("soulStreetCupom");
+
+    carrinho = [];
+    mostrarResumo();
 });
 
-document.getElementById('total').textContent=dinheiro(total);
-}
-
-document.getElementById('formulario').addEventListener('submit',function(evento){
-evento.preventDefault();
-
-const mensagem=document.getElementById('mensagem');
-
-if(carrinho.length===0){
-mensagem.textContent='Seu carrinho está vazio. Volte à página de camisas.';
-return;
-}
-
-if(!this.reportValidity())return;
-
-const pagamento=document.querySelector('input[name="pagamento"]:checked');
-
-if(!pagamento){
-mensagem.textContent='Escolha uma forma de pagamento.';
-return;
-}
-
-const nome=document.getElementById('nome').value.trim();
-const sobrenome=document.getElementById('sobrenome').value.trim();
-
-mensagem.textContent='Pedido demonstrativo confirmado para '+nome+' '+sobrenome+'. Pagamento escolhido: '+pagamento.value+'. Nenhum pagamento real foi realizado.';
-
-sessionStorage.removeItem('soulStreetCarrinho');
-carrinho=[];
-mostrarResumo();
-});
-
+carregarDados();
 mostrarResumo();

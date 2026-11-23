@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soul Street | Carrinho</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="brand">
+            <div class="brand-mark"></div>
+            <div class="brand-text">
+                <strong>SOUL STREET</strong>
+                <span>Urban Culture</span>
+            </div>
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="colaboradores.html">Colaboradores</a></li>
+                <li><a href="contatos.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="modules">
+
+            <div class="section-head">
+                <h2>Meu Carrinho</h2>
+                <p>Confira os produtos escolhidos na Soul Street.</p>
+            </div>
+
+            <div id="lista-carrinho"></div>
+
+            <div class="panel">
+                <h3>Resumo da compra</h3>
+
+                <p>Subtotal: <strong id="subtotal-carrinho">R$ 0,00</strong></p>
+                <p>Desconto: <strong id="desconto-carrinho">R$ 0,00</strong></p>
+
+                <label for="frete">Frete:</label>
+                <select id="frete">
+                    <option value="0">Retirada grátis</option>
+                    <option value="15">Entrega padrão - R$ 15,00</option>
+                    <option value="25">Entrega expressa - R$ 25,00</option>
+                </select>
+
+                <p>Total: <strong id="total-carrinho">R$ 0,00</strong></p>
+
+                <label for="cupom">Cupom de desconto:</label>
+                <input type="text" id="cupom" placeholder="Digite seu cupom">
+
+                <button class="btn btn-secondary" id="aplicar-cupom">
+                    Aplicar cupom
+                </button>
+
+                <p id="mensagem-cupom"></p>
+
+                <button class="btn btn-primary" id="finalizar-compra">
+                    Finalizar compra
+                </button>
+
+                <button class="btn btn-secondary" id="limpar-carrinho">
+                    Limpar carrinho
+                </button>
+
+                <a href="produtos.html" class="btn btn-secondary">
+                    Continuar comprando
+                </a>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="../JS/produtosa.js"></script>
+
+</body>
+</html>

@@ -7,7 +7,8 @@
 (() => {
     "use strict";
 
-    const CHAVE = "soulStreetCarrinho";
+    // CHAVES DO LOCALSTORAGE
+    const CHAVE = "carrinhoSoulStreet";
     const CHAVE_CUPOM = "soulStreetCupom";
     const CHAVE_CHECKOUT = "soulStreetCheckout";
 
@@ -33,13 +34,20 @@
                 carrinho = [];
             }
 
-            carrinho = carrinho.filter(item =>
-                item &&
-                typeof item.nome === "string" &&
-                Number.isFinite(Number(item.preco)) &&
-                Number(item.preco) > 0 &&
-                Number(item.quantidade) > 0
-            );
+            carrinho = carrinho
+                .filter(item =>
+                    item &&
+                    typeof item.nome === "string" &&
+                    Number.isFinite(Number(item.preco)) &&
+                    Number(item.preco) > 0
+                )
+                .map(item => ({
+                    ...item,
+                    quantidade: Number(item.quantidade) > 0
+                        ? Number(item.quantidade)
+                        : 1,
+                    id: item.id || item.nome.toLowerCase()
+                }));
 
         } catch {
             carrinho = [];
@@ -98,28 +106,25 @@
     };
 
     // COMPRA DIRETA
-    // Adiciona o produto sem apagar os anteriores e vai ao checkout.
     window.comprarAgora = function(nome, preco) {
         adicionarProduto(nome, preco);
         irParaCheckout();
     };
 
+    // ABRIR CARRINHO
     function abrirCarrinho() {
-    const painel = $("carrinho-container");
+        const painel = $("carrinho-container");
 
-    // Se estiver na página de produtos,
-    // abre a página completa do carrinho
-    if (!painel) {
-        window.location.href = "carrinho.html";
-        return;
+        if (!painel) {
+            window.location.href = "carrinho.html";
+            return;
+        }
+
+        painel.style.display = "flex";
+        document.body.style.overflow = "hidden";
     }
 
-    // Se o carrinho estiver na própria página,
-    // abre o painel normalmente
-    painel.style.display = "flex";
-    document.body.style.overflow = "hidden";
-}
-
+    // FECHAR CARRINHO
     function fecharCarrinho() {
         const painel = $("carrinho-container");
         const carrinhoAntigo = $("carrinho");
@@ -310,7 +315,9 @@
             carrinho = [];
             cupomAtivo = false;
 
-            if ($("cupom")) $("cupom").value = "";
+            if ($("cupom")) {
+                $("cupom").value = "";
+            }
 
             if ($("mensagem-cupom")) {
                 $("mensagem-cupom").textContent = "";
